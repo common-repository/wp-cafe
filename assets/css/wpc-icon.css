@@ -1,0 +1,100 @@
+@font-face {
+  font-family: 'wpcafe';
+  src:  url('../fonts/wpcafe.eot?b5coso');
+  src:  url('../fonts/wpcafe.eot?b5coso#iefix') format('embedded-opentype'),
+    url('../fonts/wpcafe.ttf?b5coso') format('truetype'),
+    url('../fonts/wpcafe.woff?b5coso') format('woff'),
+    url('../fonts/wpcafe.svg?b5coso#wpcafe') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+
+i[class^="wpcafe-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'wpcafe' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.wpcafe-icon-arrow-right:before {
+  content: "\e905";
+}
+.wpcafe-customize:before {
+  content: "\e906";
+}
+.wpcafe-details_icon:before {
+  content: "\e907";
+}
+.wpcafe-general_icon:before {
+  content: "\e908";
+}
+.wpcafe-minus:before {
+  content: "\e909";
+}
+.wpcafe-plus:before {
+  content: "\e90a";
+}
+.wpcafe-shortcode_icon:before {
+  content: "\e90b";
+}
+.wpcafe-user_icon:before {
+  content: "\e90c";
+}
+.wpcafe-logo_icon:before {
+  content: "\e90d";
+}
+.wpcafe-icon1:before {
+  content: "\e90e";
+}
+.wpcafe-icon2:before {
+  content: "\e90f";
+}
+.wpcafe-icon3:before {
+  content: "\e910";
+}
+.wpcafe-icon4:before {
+  content: "\e911";
+}
+.wpcafe-shortcode_icon1:before {
+  content: "\e912";
+}
+.wpcafe-cart_icon:before {
+  content: "\e913";
+}
+.wpcafe-next:before {
+  content: "\e914";
+}
+.wpcafe-previous:before {
+  content: "\e915";
+}
+.wpcafe-icon6:before {
+  content: "\e916";
+}
+.wpcafe-icon5:before {
+  content: "\e917";
+}
+.wpcafe-settings-1:before {
+  content: "\e900";
+}
+.wpcafe-settings-2:before {
+  content: "\e901";
+}
+.wpcafe-settings-3:before {
+  content: "\e902";
+}
+.wpcafe-settings-4:before {
+  content: "\e903";
+}
+.wpcafe-settings-5:before {
+  content: "\e904";
+}

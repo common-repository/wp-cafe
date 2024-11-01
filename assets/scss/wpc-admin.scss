@@ -1,0 +1,1827 @@
+@import "_base";
+@import "_variable";
+@import "_framework";
+
+:root {
+	--wpc-primary: #e3106e;
+	--wpc-dark-color: #000000;
+	--wpc-dark-light: #1d2327;
+	--wpc-gray-color: #87888b;
+	--wpc---wpc-white-color: #fff;
+}
+
+.wrap {
+	margin: 0px;
+}
+.notice {
+    margin-bottom: 15px;
+}
+body.toplevel_page_cafe_menu {
+	background-color: #ededf8;
+}
+#toplevel_page_cafe_menu {
+	.toplevel_page_cafe_menu {
+		.dashicons-admin-generic:before {
+			content: "\e90d" !important;
+			font-family: "wpcafe" !important;
+		}
+	}
+}
+.wpc-settings .wpc-tab li a.nav-tab-active {
+	background-color: #fff !important;
+	color: $primary-color !important;
+	border-bottom-left-radius: 0;
+	border-bottom-right-radius: 0;
+}
+
+.wpc-settings .wpc-tab li a {
+	background-color: transparent !important;
+}
+.wpc_tab_content > .tab-pane,
+.wpc-shortcode-setttings .wpc-shortcode-inner-wrap {
+	display: none;
+	margin-bottom: 30px;
+}
+
+.wpc_tab_content > .tab-pane.active,
+.wpc-shortcode-setttings .wpc-shortcode-inner-wrap {
+	display: block !important;
+}
+
+/* disbale for pro */
+#wp-wpc_rejected_email-wrap,
+#wp-wpc_confirm_email-wrap,
+#wp-wpc_admin_booking_cancel_email-wrap,
+#wp-wpc_admin_booking_confirm_email-wrap,
+#wp-wpc_reservation_with_menu_email-wrap {
+	pointer-events: none;
+	opacity: 0.5;
+	background: #ccc;
+}
+
+/*--------------------------
+// wpc settings
+---------------------------*/
+
+.wpc-tab-title {
+	font-size: 18px;
+	font-weight: 600;
+	text-transform: capitalize;
+	color: var(--wpc-dark-color);
+	margin: 28px 0 15px;
+}
+
+.wpc-settings {
+	.wpc-settings-title {
+		font-size: 22px;
+		font-weight: 700;
+		margin-bottom: 30px;
+		padding-bottom: 20px;
+		border-bottom: 1px solid #d2d5df;
+		i {
+			vertical-align: middle;
+			font-size: 18px;
+			background: rgba($primary-color, 0.08);
+			color: $primary-color;
+			width: 36px;
+			height: 36px;
+			display: inline-block;
+			text-align: center;
+			line-height: 36px;
+			@include border-radius(5px);
+			margin-right: 5px;
+		}
+	}
+
+	//   tab nav
+	.wpc-tab {
+		margin: 0;
+		li {
+			display: inline-block;
+			outline: none;
+			border: none;
+			margin-right: 10px;
+			margin-bottom: 0;
+
+			a {
+				float: none;
+				display: inline-block;
+				background-color: #fff;
+				border: none;
+				font-size: 18px;
+				line-height: 25px;
+				font-weight: 600;
+				padding: 12px 27px;
+				@include border-radius(8px);
+				@include transition();
+				outline: none;
+				margin: 0;
+				svg {
+					margin-bottom: -4px;
+					margin-right: 3px;
+					path {
+						fill: var(--wpc-label-color);
+					}
+				}
+				small {
+					font-size: 12px;
+					display: block;
+					padding-left: 24px;
+					line-height: 12px;
+					font-weight: 400;
+					color: #999;
+				}
+
+				i {
+					margin-right: 5px;
+					vertical-align: middle;
+				}
+
+				&[data-id="hooks"] {
+					i.wpcafe-icon5:before {
+						content: "\e911";
+						font-size: 12px;
+					}
+				}
+				&.nav-tab-active {
+					background-color: $primary-color;
+					color: #fff;
+					outline: none;
+					box-shadow: none;
+					border: none;
+
+					small {
+						color: #fff;
+					}
+					svg {
+						path {
+							fill: var(--wpc-primary);
+						}
+					}
+				}
+			}
+		}
+	}
+
+	.wpc-settings-tab {
+		background-color: #f0f0f1;
+		@media (min-width: 768px) {
+			margin-left: 40px;
+		}
+		li {
+			a {
+				position: relative;
+				&::after,
+				&::before {
+					content: url(../images/curve_right.png);
+					width: 16px;
+					height: 16px;
+					position: absolute;
+					right: -15px;
+					z-index: 1;
+					bottom: 0;
+					opacity: 0;
+					@include transition();
+					@media (max-width: 1023px) {
+						display: none;
+					}
+				}
+				&::before {
+					content: url(../images/curve_left.png);
+					left: -15px;
+				}
+				&.nav-tab-active {
+					&::after,
+					&::before {
+						opacity: 1;
+					}
+				}
+			}
+		}
+	}
+
+	.settings-content-wraps {
+		background-color: var(--wpc---wpc-white-color);
+		padding: 30px;
+		@include border-radius(8px);
+		margin-right: 20px;
+	}
+	.wpc_submit_wrap {
+		margin-left: auto;
+		padding-bottom: 25px;
+		@media (min-width: 1024px) {
+			width: calc(100% - 250px);
+		}
+	}
+	.notification,
+	.key_options,
+	&.wpc-tools-setttings {
+		.wpc_submit_wrap {
+			width: 100%;
+		}
+	}
+	//   checkbox style
+	.wpc-weekly-schedule-list {		
+		input[type="checkbox"] + label {
+			cursor: pointer;
+			margin-right: 15px;
+			margin-bottom: 10px;
+			display: inline-block;
+			line-height: 25px;
+		}
+
+		input[type="checkbox"] {
+			display: none;
+		}
+
+		input[type="checkbox"] + label:before {
+			content: "\2714";
+			border: 1px solid #cccccc;
+			@include border-radius(7px);
+			display: inline-block;
+			width: 20px;
+			height: 20px;
+			vertical-align: bottom;
+			color: transparent;
+			transition: 0.2s;
+			text-align: center;
+			line-height: 20px;
+			margin-right: 10px;
+			background-color: #fff;
+			font-size: 11px;
+		}
+
+		input[type="checkbox"] + label:active:before {
+			transform: scale(0);
+		}
+
+		input[type="checkbox"]:checked + label:before {
+			background-color: var(--wpc-dark-alt);
+			border-color: var(--wpc-dark-alt);
+			color: #fff;
+		}
+
+		input[type="checkbox"]:disabled + label:before {
+			transform: scale(1);
+			border-color: #aaa;
+		}
+
+		input[type="checkbox"]:checked:disabled + label:before {
+			transform: scale(1);
+			background-color: $secondary-color;
+			border-color: $secondary-color;
+		}
+	}
+	//   label item
+	.wpc-label-item {
+		.wpc_pb_two {
+			font-size: 15px;
+			margin: 0 0 20px;
+		}
+
+		.wpc-meta {
+			margin-left: 15px;
+			.exception_block,
+			.wpc-schedule-field {
+				display: flex;
+				flex-wrap: wrap;
+				.attr-form-control {
+					margin-right: 10px;
+					+ .attr-form-control {
+						margin-bottom: 10px;
+					}
+				}
+			}
+
+			.exception_time_clear,
+			.wpc_all_day_clear,
+			.wpc_weekly_clear,
+			.wpc_multi_clear,
+			.wpc_pickup_weekly_clear,
+			.wpc_delivery_weekly_clear,
+			.wpc_all_multi_clear,
+			.wpc_extra_field_clear,
+			.wpc_pickup_exception_date_clear,
+			.wpc_delivery_exception_date_clear,
+			.wpc_multi_weekly_clear,
+			.wpc_reservation_holiday_clear {
+				display: flex;
+				align-self: center;
+				cursor: pointer;
+				margin-right: 10px;
+				color: #6b6868;
+			}
+			@media (max-width: 768px) {
+				margin-left: 0;
+			}
+		}
+
+		//   shcedule block
+		.schedule_block,
+		.pickup_weekly_block,
+		.delivery_schedule_block,
+		.pickup_schedule_block {
+			margin-bottom: 40px;
+			position: relative;
+			padding-right: 40px;
+
+			label {
+				font-size: 15px;
+			}
+
+			.wpc-btn {
+				position: absolute;
+				right: 0;
+				top: -6px;
+				padding: 0;
+			}
+		}
+		//   esception
+		.exception_block,
+		.schedule_block,
+		.pickup_schedule_block,
+		.multi_schedule_wrap,
+		.percentage_block,
+		.pickup_weekly_block,
+		.delivery_schedule_block {
+			.wpc-btn {
+				padding: 0;
+				width: 40px;
+				height: 40px;
+				line-height: 40px;
+				border-radius: 50%;
+				background-color: $secondary-color;
+			}
+		}
+
+		.wpc_flex_reverse {
+			.add_schedule_block,
+			.wpc-btn,
+			.add_exception_block {
+				i {
+					vertical-align: middle;
+					line-height: 18px;
+				}
+			}
+		}
+
+		&.wpc-shcedule-event-item {
+			align-items: start;
+		}
+		&.rich-texteditor {
+			.wpc-meta {
+				margin-left: 0;
+			}
+		}
+		&.wpc-label-item-top {
+			.wpc-label {
+				align-self: flex-start;
+			}
+		}
+	}
+	//   copy button
+	.wpc_copy_button {
+		span {
+			vertical-align: middle;
+			line-height: 16px;
+		}
+	}
+
+	//   pop calender
+	.picker {
+		.picker__frame,
+		.picker__holder {
+			-ms-transform: translateY(0);
+			transform: translateY(0);
+			visibility: hidden;
+		}
+
+		&.picker--opened {
+			.picker__holder,
+			.picker__frame {
+				-ms-transform: translateY(0);
+				transform: translateY(0);
+				visibility: visible;
+			}
+		}
+	}
+}
+
+.wpc-pro {
+	a {
+	  font-size: 12px;
+	  font-weight: 700;
+	  background-color: #FEF6E6;
+	  border: 1px solid #FB9E12;
+	  display: inline-block;
+	  color: #0A1018;
+	  padding: 9px 10px;
+	  border-radius: 5px;
+	  line-height: 0.8;
+	  text-decoration: none;
+	  transition: all ease 0.3s;
+	  &:hover {
+		background-color: darken(#FEF6E6, 5%);
+	  }
+	}
+  }
+/*------------------------
+  Reservation table
+  -----------------------*/
+body.post-type-wpc_reservation,
+body.wpcafe_page_wpc_product_addons {
+	.wrap {
+		padding: 40px 40px 0;
+		margin-top: 30px;
+		@include border-radius(10px);
+		position: relative;
+	}
+
+	.wrap h1.wp-heading-inline {
+		font-weight: 700;
+		font-size: 22px;
+		box-sizing: border-box;
+	}
+	.search-box {
+		float: right;
+		position: relative;
+	}
+	.search-box #post-search-input,
+	.tablenav .flatpickr-input,
+	.tablenav .actions select {
+		padding: 10px 25px;
+		border-radius: 6px;
+		border: 1px solid #d2d2d2;
+		font-size: 14px;
+		line-height: 16px;
+		font-weight: 500;
+		color: #000;
+		-webkit-appearance: none;
+		-moz-appearance: none;
+		appearance: none;
+		text-transform: capitalize;
+		margin-right: 10px;
+		background-color: var(--wpc---wpc-white-color);
+		@media (max-width: 768px) {
+			max-height: 30px;
+		}
+	}
+	.tablenav .flatpickr-input {
+		max-height: 38px;
+	}
+
+	#search-submit {
+		padding: 4px 20px;
+		border: none;
+		background-image: url("../images/search-icon.svg");
+		background-repeat: no-repeat;
+		position: relative;
+		text-indent: -9999px;
+		background-position: center center;
+		background-color: transparent;
+		position: absolute;
+		right: 15px;
+		top: 1px;
+		text-transform: unset;
+		min-height: 38px;
+		max-height: 38px;
+	}
+
+	.tablenav {
+		margin: 0 0 30px;
+		height: auto;
+		@media (max-width: 768px) {
+			text-align: center;
+		}
+		.button {
+			background-color: transparent;
+			@include transition();
+			padding: 0 14px;
+			@include border-radius(6px);
+			font-size: 14px;
+			font-weight: 700;
+			line-height: 36px;
+			color: #0073aa;
+			outline: none;
+			border: 1px solid #0073aa;
+
+			&:hover,
+			&:focus {
+				outline: none;
+			}
+
+			&:hover {
+				background-color: #0073aa;
+				color: #ffffff;
+				border-color: transparent;
+			}
+
+			&.button-primary {
+				border-color: transparent;
+
+				&:hover {
+					background-color: transparent;
+					color: #e3106e;
+					border-color: #e3106e;
+				}
+			}
+			@media (max-width: 768px) {
+				margin-bottom: 30px;
+			}
+		}
+		.button-primary.button[name="reserv_export_pro"] {
+			background-color: #2f4858;
+			color: $white-color;
+
+			&:hover {
+				background: transparent;
+				border-color: #2f4858;
+				color: #2f4858;
+			}
+		}
+		.displaying-num {
+			margin-right: 7px;
+			font-size: 13px;
+			color: var(--wpc-dark-color);
+		}
+		.tablenav-pages {
+			margin: 0;
+			.button {
+				@include border-radius(50%);
+				width: 40px;
+				height: 40px;
+				font-size: 20px;
+				line-height: 34px;
+				color: #2f4858;
+				padding: 0;
+				border-color: rgba($color: #000000, $alpha: 0.2);
+				min-height: 40px;
+				min-width: 40px;
+
+				&:hover {
+					background: #dcdee3;
+					color: #2f4858;
+					border-color: transparent;
+				}
+			}
+			.current-page {
+				margin: 0 2px 0 0;
+				font-size: 14px;
+				text-align: center;
+				border-radius: 50%;
+				width: 40px;
+				height: 40px;
+			}
+		}
+	}
+
+	.subsubsub {
+		li {
+			position: relative;
+			margin: 0;
+			a {
+				padding: 0 15px 28px;
+				display: inline-block;
+				line-height: 1;
+				&::before {
+					content: "";
+					position: absolute;
+					left: 0;
+					bottom: 0;
+					width: 100%;
+					height: 5px;
+					background-color: #e3106e;
+					border-radius: 10px 10px 0 0;
+					transition: all 0.3s ease-in-out;
+					transform: scale(0.9);
+					visibility: hidden;
+					opacity: 0;
+				}
+
+				&:hover,
+				&.current {
+					&::before {
+						visibility: visible;
+						transform: scale(1);
+						opacity: 1;
+					}
+				}
+			}
+		}
+	}
+
+	.wp-header-end {
+		visibility: visible;
+		margin: 0;
+		margin-top: 12px;
+		margin-bottom: 12px;
+		border-top-color: #ededed;
+		border-bottom: none;
+	}
+
+	.subsubsub a {
+		font-weight: 500;
+		font-size: 16px;
+		outline: none;
+		color: #777b7d;
+
+		&:hover,
+		&:focus {
+			outline: none;
+			box-shadow: none;
+			border: none;
+		}
+		.count {
+			color: #777b7d;
+			font-weight: 500;
+		}
+		&.current,
+		&.current .count {
+			color: #e3106e;
+		}
+	}
+
+	#post-body #normal-sortables {
+		min-height: 1px;
+	}
+
+	.wp-heading-inline + .page-title-action {
+		background-color: $primary-color;
+		color: #fff;
+		border: none;
+		padding: 0 20px;
+		@include border-radius(6px);
+		@include transition();
+		line-height: 38px;
+		font-size: 14px;
+		font-weight: 700;
+		border: 1px solid transparent;
+		&:hover {
+			background-color: transparent;
+			border: 1px solid #e3106e;
+			color: #e3106e;
+		}
+	}
+	//   list table
+	.wp-list-table {
+		border: none;
+
+		thead,
+		tfoot {
+			tr {
+				box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.06);
+				border-radius: 8px 8px 0 0;
+				background-color: #f7f8f9;
+
+				th {
+					line-height: 60px;
+					color: #000;
+					font-size: 15px;
+					font-weight: 500;
+					padding-left: 30px;
+					border-color: #e4e6eb;
+				}
+				td {
+					border-color: #e4e6eb;
+				}
+			}
+			.check-column {
+				padding: 3px 0 0 0;
+			}
+		}
+		tfoot {
+			tr {
+				th,
+				td {
+					background: #ffffff;
+					font-weight: 500;
+				}
+			}
+		}
+		.check-column {
+			padding: 28px 0 0 0;
+
+			input {
+				margin-left: 20px;
+			}
+			input[type="checkbox"],
+			input[type="radio"] {
+				border: 1px solid #2f4858;
+				border-radius: 4px;
+				height: 20px;
+				width: 20px;
+			}
+			input[type="checkbox"]:checked::before,
+			input[type="checkbox"]:checked::before {
+				content: url("../fonts/check_mark.svg");
+				margin: 0;
+				height: 18px;
+				width: 11px;
+				top: 5px;
+				position: relative;
+				left: 3px;
+			}
+			input[type="checkbox"]:checked {
+				background: #2f4858;
+				border-color: transparent;
+			}
+			input[type="checkbox"]:focus {
+				box-shadow: none;
+			}
+		}
+		#the-list {
+			tr {
+				background-color: #f7f8f9;
+				&:nth-child(odd) {
+					background-color: #ffffff;
+				}
+
+				td {
+					color: #000;
+					padding: 24px 10px 30px 30px;
+
+					@media (max-width: 768px) {
+						padding: 5px 10px 5px 40%;
+						&.column-primary {
+							padding: 27px 0 10px 30px !important;
+						}
+					}
+				}
+				td,
+				th {
+					border-bottom: 1px solid #eaeaea;
+					font-size: 15px;
+				}
+			}
+		}
+	}
+}
+body.post-type-wpc_reservation {
+	h1.wp-heading-inline {
+		padding: 0;
+		margin: 0 10px 0 0;
+	}
+
+	.search-box {
+		margin: -77px 0 0;
+	}
+
+	.subsubsub {
+		margin: 0 0 25px;
+		padding: 25px 0 0;
+		width: 100%;
+		box-sizing: border-box;
+		background: var(--wpc---wpc-white-color);
+		border-radius: 6px;
+	}
+	.wp-list-table {
+		margin-bottom: 30px;
+	}
+
+	@media (max-width: 1024px) {
+		.wrap {
+			padding: 40px 0 0;
+		}
+		.tablenav {
+			height: auto;
+			.tablenav-pages {
+				float: none;
+				margin: 20px 0 0;
+			}
+		}
+		.flatpickr-input {
+			max-height: 38px;
+		}
+		button[name="reserv_export_pro"] {
+			margin: 0 0 20px;
+		}
+	}
+	@media (max-width: 768px) {
+		.wrap {
+			padding: 40px 15px 0;
+		}
+		.search-box {
+			height: auto;
+			width: 100%;
+			margin: 0;
+		}
+		.subsubsub {
+			li {
+				margin: 0 0 !important;
+			}
+		}
+		.button-primary.button[name="reserv_export_pro"] {
+			margin: 0;
+		}
+	}
+}
+body.post-type-wpc_reservation {
+	.wrap {
+		padding-left: 20px;
+	}
+}
+//   reservation meta
+#wpc_reservation_meta {
+	h2.hndle {
+		font-size: 18px;
+		border-bottom: 1px solid #f5f5f5;
+	}
+
+	.inside {
+		padding: 20px 25px 12px;
+	}
+
+	&.postbox {
+		border: 1px solid #f5f5f5;
+		box-shadow: none;
+	}
+}
+
+// doc link
+.doc-link {
+	font-weight: 700;
+	color: $primary-color;
+}
+
+/*------------------------
+responsive
+-----------------------*/
+@media (max-width: 1600px) {
+	.wpc-addon-char-limit-main {
+		.wpc-label-item {
+			.wpc-meta {
+				float: none;
+			}
+		}
+	}
+}
+@media (max-width: 992px) {
+	.wpc-settings {
+		.wpc-tab {
+			li {
+				a {
+					font-size: 14px;
+					padding: 10px 16px;
+				}
+			}
+		}
+	}
+
+	.wpc-label-item {
+		.wpc-label {
+			margin-bottom: 20px;
+		}
+
+		.wpc-label {
+			float: none;
+		}
+	}
+}
+
+@media (max-width: 767px) {
+	.wpc-label-item {
+		.wpc-settings-input,
+		.wpc-form-control {
+			width: 100%;
+		}
+	}
+}
+
+.flatpickr-calendar.showTimeInput.noCalendar {
+	width: 190px;
+}
+
+.flatpickr-time input:hover,
+.flatpickr-time .flatpickr-am-pm:hover,
+.flatpickr-time input:focus,
+.flatpickr-time .flatpickr-am-pm:focus {
+	background-color: #fff;
+	outline: none;
+	border: none;
+	box-shadow: none;
+}
+.hide_field {
+	display: none !important;
+}
+
+// notice banner
+.wpc-notice-buy-pro-banner {
+	background-repeat: no-repeat;
+	background-size: contain;
+	background-position: center;
+	background-color: #e7272d;
+	min-height: 190px;
+	.notice-banner-link {
+		position: absolute;
+		left: 0;
+		right: 0;
+		top: 0;
+		width: 100%;
+		height: 100%;
+	}
+	.notice-dismiss:before {
+		color: #fff;
+	}
+}
+
+@media (max-width: 1600px) {
+	.wpc-notice-buy-pro-banner {
+		min-height: 130px;
+	}
+}
+@media (max-width: 1200px) {
+	.wpc-notice-buy-pro-banner {
+		min-height: 100px;
+	}
+}
+
+.wpc-icon-get-pro {
+	font-size: 17px;
+	color: #e7272d;
+}
+
+.wpc-text-get-pro {
+	color: #e7272d;
+	font-weight: bold;
+}
+
+.wpc-plugin-meta-rate-icon {
+	color: #e7272d;
+	font-size: 10px;
+	display: inline-block;
+	vertical-align: baseline;
+	width: auto;
+}
+
+.post-type-metform-form .modal-backdrop {
+	z-index: 999;
+}
+.wpc-licence-parent {
+	margin-top: 30px;
+	margin-right: 30px;
+}
+.wpc-licence-input-box {
+	width: 765px;
+}
+
+.wpc-default-guest-message {
+	color: #e7272d;
+}
+
+.wpc_success_message {
+	display: none;
+	text-align: center;
+	background: #d7ffe3;
+	padding: 10px;
+	margin-bottom: 20px;
+}
+.wpc_error_message {
+	display: none;
+	text-align: center;
+	background: #ff8f8f4a;
+	padding: 10px;
+	margin-bottom: 20px;
+}
+
+.wpc-label-item {
+	#wpc_late_bookings.wpc-settings-input {
+		width: 230px;
+	}
+}
+
+.wpc-d-none {
+	display: none;
+}
+
+// shortcode inner wrap
+.wpc-shortcode-setttings {
+	.wpc-settings-title {
+		border-bottom: none;
+		padding-bottom: 0;
+	}
+}
+
+// shortcode settings
+.shortcode-generator-main-wrap {
+	display: none;
+	overflow-x: auto;
+	overflow-y: scroll;
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	z-index: 1050;
+	-webkit-overflow-scrolling: touch;
+	outline: 0;
+}
+.shortcode-generator-inner {
+	transform: translateY(10%);
+	width: 600px;
+	margin: 30px auto;
+	padding: 30px;
+	background-color: #fff;
+	box-shadow: 0 10px 30px rgb(0 0 0 / 18%);
+	border-radius: 10px;
+
+	.wpc-setting-input,
+	.wpc-form-control,
+	.image_url {
+		width: 100%;
+		height: 44px;
+		padding: 10px 25px;
+		border-radius: 5px;
+		border: 1px solid #cccccc;
+
+		font-size: 14px;
+		line-height: 16px;
+		color: #666;
+		-webkit-appearance: none;
+		-moz-appearance: none;
+		appearance: none;
+
+		&:focus {
+			border: 1px solid $primary-color;
+		}
+	}
+	.wpc-field-wrap {
+		margin-bottom: 20px;
+		select {
+			width: 100%;
+		}
+	}
+
+	.attr-form-group {
+		.wpc-meta {
+			display: flex;
+			float: none;
+		}
+		.etn_copy_button {
+			line-height: 20px;
+		}
+	}
+}
+
+.copy_shortcodes {
+	display: none;
+	margin-top: 20px;
+}
+
+.shortcode-popup-close {
+	position: absolute;
+	right: -7px;
+	top: -5px;
+	width: 36px;
+	height: 36px;
+	line-height: 32px;
+	background: #f00;
+	color: #fff;
+	text-align: center;
+	font-size: 20px;
+	border-radius: 50%;
+	cursor: pointer;
+}
+
+.wpmet-notice {
+	img {
+		max-width: 100% !important;
+		max-height: 100% !important;
+	}
+}
+
+.wpcafe_page_wpcafe_get_help {
+	.wpmet-notice {
+		margin-right: 20px;
+		margin-top: 20px;
+	}
+}
+
+// admin tab
+.wpc-tab-wrapper {
+	.wpc-nav {
+		display: inline-block;
+		@include border-radius(6px);
+		padding: 0;
+		margin: 0 0 15px;
+		li {
+			display: inline-block;
+			margin: 0 10px 0 0;
+			a {
+				padding: 10px 20px;
+				cursor: pointer;
+				display: block;
+				font-weight: 500;
+				color: #000;
+				@include border-radius(6px);
+				position: relative;
+				font-size: 14px;
+				&::before {
+					content: "";
+					position: absolute;
+					left: 43%;
+					bottom: -10px;
+					width: 0;
+					height: 0;
+					border-style: solid;
+					border-width: 10px 10px 0 10px;
+					border-color: $secondary-color transparent transparent
+						transparent;
+					opacity: 0;
+					visibility: hidden;
+				}
+				&.wpc-active {
+					background-color: $secondary-color;
+					color: #fff;
+					border-color: transparent;
+					&::before {
+						opacity: 1;
+						visibility: visible;
+					}
+				}
+			}
+		}
+	}
+	.wpc-tab {
+		display: none;
+		&.wpc-active {
+			display: block;
+		}
+	}
+}
+
+// admin tab style 2
+.wpc-tab-style2 {
+	display: flex;
+	width: 100%;
+	background: #fff;
+
+	.wpc-nav {
+		display: block;
+		@include border-radius(0);
+		min-width: 280px;
+		width: 280px;
+		margin-left: -30px;
+		li {
+			display: block;
+			a {
+				@include border-radius(0);
+				padding: 20px 30px;
+				font-size: 16px;
+				margin-right: 20px;
+				overflow: hidden;
+				border-top: 1px solid #ebecef;
+				border-bottom: 1px solid #ebecef;
+				margin-bottom: -1px;
+				position: relative;
+				&.wpc-active {
+					color: $primary-color;
+					background: #fef3f8;
+					border-top-right-radius: 6px;
+					border-bottom-right-radius: 6px;
+					&:before {
+						width: 8px;
+						border: none;
+						left: -4px;
+						bottom: 0;
+						top: 0;
+						background: #e3106e;
+						height: 28px;
+						margin: auto;
+						border-radius: 25px;
+					}
+					svg {
+						position: absolute;
+						right: 18px;
+						fill: var(--wpc-primary);
+						top: 0;
+						bottom: 0;
+						margin: auto;
+					}
+				}
+			}
+			&:not(:last-child) {
+				a {
+					border-top-color: transparent;
+				}
+			}
+			&:last-child {
+				a {
+					border-bottom-color: transparent;
+				}
+			}
+		}
+		@media (max-width: 767px) {
+			margin-left: 0;
+			width: 100%;
+		}
+	}
+	.wpc-tab-content {
+		flex-grow: 1;
+		background: #ededf8;
+		border-radius: 8px;
+		padding: 20px;
+	}
+
+	.shortcode-generator-wrap {
+		.wpc-label-item {
+			margin-bottom: 10px;
+		}
+	}
+	.wpc-guest-count {
+		.wpc-meta {
+			text-align: right;
+		}
+	}
+	.special-menu-block {
+		display: block;
+		padding: 0;
+		background: transparent;
+	}
+
+	.wpc-desc {
+		margin-bottom: 0;
+	}
+}
+@media (max-width: 1024px) {
+	.wpc-tab-style2 {
+		flex-wrap: wrap;
+		.wpc-nav {
+			width: 100%;
+		}
+	}
+}
+
+.mb-25 {
+	display: none;
+}
+
+.wpc-sc-builder-label {
+	margin-bottom: 8px;
+}
+
+.wpc-sc-builder-label-desc {
+	margin-bottom: 15px;
+	display: block;
+}
+
+// slot schedule in admin reservation tab
+// 3rd level tab
+.single_schedule {
+	margin-bottom: 10px;
+}
+
+.wpc-schedule-tab {
+	.wpc-schedule-label {
+		width: 100%;
+	}
+	.wpc-meta {
+		width: 100%;
+		.wpc-nav-schedule {
+			width: 100%;
+			margin: 20px 0;
+			li {
+				display: inline-block;
+				margin-right: -4px;
+				a {
+					border: 1px solid #e4e6eb;
+					margin: 0;
+					border-radius: 6px;
+					color: var(--wpc-dark-color);
+					cursor: pointer;
+					&::before {
+						display: none;
+					}
+					&:hover,
+					&.wpc-schedule-active {
+						border: 1px solid var(--wpc-primary);
+						color: var(--wpc-primary);
+						background-color: #fef3f8;
+					}
+				}
+				&:first-child {
+					a {
+						border-top-right-radius: 0;
+						border-bottom-right-radius: 0;
+					}
+				}
+				&:last-child {
+					a {
+						border-top-left-radius: 0;
+						border-bottom-left-radius: 0;
+					}
+				}
+			}
+		}
+	}
+	.wpc-tab-content {
+		background-color: transparent;
+		padding: 0;
+		.wpc-schedule-active {
+			display: block;
+		}
+	}
+}
+
+.wpc-admin-settings-message {
+	margin-top: 5px;
+	display: block;
+	color: var(--wpc-text-color);
+}
+span.add_multi_diff_schedule_block.wpc-btn,
+.single-slot-schedule span.add_schedule_block.wpc-btn {
+	margin-top: -10px;
+}
+
+// default gauest label
+.wpc-label-item .wpc-settings-input#wpc_default_guest_no,
+.wpc-label-item .wpc-settings-input#wpc_min_guest_no,
+.wpc-label-item .wpc-settings-input#wpc_max_guest_no {
+	width: 205px;
+}
+
+// tip
+.percentage_block {
+	align-items: center;
+	.wpc_pro_tip_percentage_data_clear {
+		margin-right: 10px;
+	}
+}
+
+// order notification in admin settings
+.wpc-notification-wrapper {
+	position: fixed;
+	right: 5px;
+	bottom: 50px;
+	z-index: 9999;
+	max-height: 500px;
+	overflow-y: scroll;
+	.wpc-notification-list {
+		padding: 20px;
+		background: #fff;
+		min-width: 250px;
+		border: 2px solid #eaeaea;
+		margin-bottom: 8px;
+		background: #ffffff;
+		border-radius: 10px;
+		position: relative;
+		.order-name {
+			color: #000;
+			font-size: 15px;
+			line-height: 36px;
+		}
+		.order-preview {
+			color: $primary-color;
+		}
+		.order-name {
+			strong {
+				font-weight: 700;
+				font-size: 15px;
+				line-height: 19px;
+			}
+		}
+		.notification-status,
+		.notification-price-total {
+			font-weight: 700;
+			font-size: 14px;
+			line-height: 20px;
+			color: #f57600;
+			span {
+				font-weight: 400;
+				color: #606060;
+			}
+		}
+		.order-preview {
+			background: #e3106e;
+			border-radius: 8px;
+			font-weight: 600;
+			font-size: 14px;
+			line-height: 16px;
+			padding: 10px 15px;
+			position: absolute;
+			right: 18px;
+			bottom: 15px;
+			color: #fff;
+			text-decoration: none;
+		}
+		.notification-price-total {
+			color: #000;
+		}
+	}
+
+	.wpc-notification-clear {
+		color: #000;
+		font-size: 16px;
+		display: inline-block;
+		text-align: left;
+		font-weight: 700;
+	}
+	.wpc-notification-popup-recent-order {
+		background: transparent;
+		.recent-order {
+			margin-left: 0;
+		}
+	}
+}
+
+.wpc-no-viewing,
+.wpc-notification-popup-recent-order {
+	background: #dbe2e2;
+	.recent-order {
+		text-align: center;
+		margin: auto;
+		background: #07c007;
+		color: #fff;
+		padding: 2px 6px;
+		border-radius: 4px;
+		text-transform: uppercase;
+		font-size: 12px;
+		line-height: 12px;
+		margin-left: 5px;
+	}
+}
+
+// product addon settings
+.addons-block.wrap {
+    background: #fff;
+    margin-right: 15px;
+}
+.wpc-product-addons-wrapper {
+	.wpc-pro-pao-actions {
+		padding-left: 0;
+	}
+	.wpc-pro-pao-actions .wpc_pro_pao_add_fields {
+		background: rgba($primary-color, 0.08);
+		border: none;
+		color: $primary-color;
+		font-weight: 600;
+		padding: 0px 20px;
+		text-transform: capitalize;
+		height: 38px;
+		line-height: 38px;
+		font-size: 14px;
+	}
+	.wpc_pro_pao_main_block {
+		.wpc-pro-pao-fields {
+			margin: 15px 0;
+		}
+	}
+
+	p {
+		font-size: 16px;
+	}
+}
+.wpc-warning {
+	color: #e3106e;
+}
+.mt-25 {
+	margin-top: 25px !important;
+}
+.wpc_field_error_msg {
+	line-height: 30px;
+}
+.wpc-tooltip[data-title]:after {
+	text-transform: capitalize;
+	font-family: "Roboto";
+	font-weight: 400;
+}
+
+/*
+  New Admin Header Style  
+*/
+
+a {
+	&:focus {
+		box-shadow: none;
+		outline-style: none;
+	}
+}
+ul,
+li {
+	margin: 0;
+}
+.wpc-admin-header {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	background: #fff;
+	padding: 15px;
+	align-items: center;
+	margin-bottom: 40px;
+	clear: both;
+	@media (min-width: 780px) {
+		padding: 15px 40px;
+		margin-left: -20px;
+	}
+	.wpc-settings-title {
+		margin: 0;
+	}
+}
+.wpc-admin-header-logo {
+	display: flex;
+	align-items: center;
+	.wpc-header-title {
+		border-bottom: none;
+		padding: 0;
+		position: relative;
+		padding-left: 20px;
+		margin-left: 20px;
+		&::after {
+			content: "";
+			position: absolute;
+			left: 0;
+			top: 0;
+			bottom: 0;
+			width: 1px;
+			height: 24px;
+			background: #d6d7db;
+			margin: auto;
+		}
+		@media (max-width: 767px) {
+			padding-left: 12px;
+			margin-left: 12px;
+		}
+	}
+}
+
+.wpc-logo-wrap {
+	display: flex;
+	align-items: center;
+	img {
+		max-width: 90px;
+	}
+}
+
+.wpc-admin-menu-wrap {
+	ul {
+		display: flex;
+		flex-wrap: wrap;
+		margin: 0;
+		li {
+			margin: 0;
+			a {
+				font-size: 15px;
+				font-weight: 600;
+				text-transform: capitalize;
+				color: var(--wpc-dark-color);
+				text-decoration: none;
+				transition: all ease 0.4s;
+				&:hover {
+					color: var(--wpc-primary);
+				}
+			}
+			&:not(:last-child) {
+				margin-right: 30px;
+			}
+		}
+	}
+}
+
+.wpc-header-btn-wrap {
+	display: flex;
+	align-items: center;
+	.wpc-admin-notify-wrap {
+		margin-top: 5px;
+	}
+	.wpc-submit-wrap-header {
+		margin-left: 15px;
+		@media (max-width: 767px) {
+			display: none;
+		}
+	}
+}
+
+.wpc-version {
+	font-size: 11px;
+	line-height: 11px;
+	color: var(--wpc-dark-light);
+	font-weight: 700;
+	border: 1px solid var(--wpc-primary);
+	border-radius: 4px;
+	background-color: #fef3f8;
+	display: inline-block;
+	padding: 2px 6px;
+	margin-left: 10px;
+}
+.wpc-heading {
+	font-size: 26px;
+	font-weight: 600;
+	line-height: 36px;
+	color: var(--wpc-dark-color);
+	margin: 0 0 10px;
+}
+.wpc-admin-btn-wrap {
+	position: relative;
+	width: 30px;
+	height: 30px;
+	cursor: pointer;
+	transition: all 0.2s ease;
+	.dropdown {
+		position: absolute;
+		cursor: context-menu;
+		top: 70px;
+		right: -10px;
+		z-index: 1;
+		background-color: #fff;
+		padding: 30px;
+		border-radius: 8px;
+		box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+		min-width: 200px;
+		max-width: 200px;
+		opacity: 0;
+		visibility: hidden;
+		transition: all 0.2s ease;
+		&::after {
+			content: "";
+			position: absolute;
+			border-left: 10px solid transparent;
+			border-right: 10px solid transparent;
+			top: -10px;
+			right: 25px;
+			border-bottom: 10px solid white;
+			margin-top: 0;
+			z-index: 1;
+		}
+		.list-item {
+			a {
+				font-size: 15px;
+				font-weight: 500;
+				color: var(--wpc-dark-light);
+				display: flex;
+				align-items: center;
+				transition: all 0.2s ease;
+				text-decoration: none;
+
+				span {
+					display: inline-block;
+					margin-left: 9px;
+					border-bottom: 1px solid var(--wpc-dark-light);
+				}
+				&:not(:last-child) {
+					margin-bottom: 25px;
+				}
+			}
+		}
+	}
+	&:hover {
+		.dropdown {
+			opacity: 1;
+			visibility: visible;
+			top: 60px;
+		}
+	}
+}
+
+//performance
+.wpc-admin-performance-wrap {
+	.wpc-performance-item {
+		padding: 20px;
+		border-radius: 8px;
+		background-color: var(--wpc---wpc-white-color);
+		display: flex;
+		flex-wrap: wrap;
+		margin-bottom: 15px;
+		.wpc-overview-icon {
+			width: 70px;
+			height: 70px;
+			border-radius: 50%;
+			flex-shrink: 0;
+		}
+		.wpc-overview-content {
+			padding-left: 25px;
+		}
+		p {
+			font-size: 16px;
+			font-weight: 400;
+			color: var(--wpc-gray-color);
+			margin: 0 0 10px;
+		}
+		.wpc-count {
+			margin: 0;
+			font-size: 30px;
+			font-weight: 700;
+			color: var(--wpc-dark-color);
+			line-height: 0.8;
+		}
+	}
+}
+.wpc-admin-sec {
+	padding: 20px;
+	margin: 40px 0;
+	@media (min-width: 1024px) {
+		padding: 0 40px 0 20px;
+	}
+}
+.wpc-banner-image {
+	img {
+		max-width: 100%;
+	}
+}
+// report
+.wpc-overview-sec {
+	#wpc_chart_wrap {
+		background-color: var(--wpc---wpc-white-color);
+		padding: 50px 40px;
+		@include border-radius(8px);
+		#wpc_over_view {
+			width: 100%;
+			height: 360px;
+		}
+	}
+}
+.wpc-report-item {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: flex-end;
+	background-color: transparent;
+	padding: 0;
+	.wpc-meta {
+		margin-left: 15px;
+		.wpc-settings-input {
+			width: 150px;
+		}
+		.wpc_chart_type {
+			margin-bottom: 20px;
+		}
+	}
+	.wpc-meta-double-date {
+		flex-grow: 1;
+		max-width: 250px;
+		margin-bottom: 15px;
+		.wpc_date_picker {
+			width: 100%;
+		}
+	}
+}
+@media (max-width: 992px) {
+	.wpc-overview-sec {
+		.wpc-col-md-7,
+		.wpc-col-md-5 {
+			max-width: 100%;
+			flex: 0 0 100%;
+		}
+		.wpc-report-item {
+			justify-content: flex-start;
+			.wpc-meta:first-child {
+				margin-left: 0;
+			}
+		}
+	}
+}
+
+// tools page style 
+.wpc-tools-content { 
+	padding-bottom: 35px;
+	.wpc-main-title {
+		font-size: 36px;
+		font-weight: 600;
+	}
+	.wpc-desc {
+		font-size: 16px;
+		color: #71787C;
+		margin: 18px 0;
+	}
+}
+
+.wpc-tools-item {
+	padding: 30px;
+	margin-bottom: 20px;
+	display: flex;
+	.wpc-label {
+		display: flex;
+		flex-wrap: nowrap;
+		margin-right: 0;
+		label {
+			font-size: 20px;
+			line-height: 30px;
+			margin-bottom: 13px;
+		}
+		.wpc-label-icon {
+			width: 64px;
+			height: 64px;
+			margin-right: 15px;
+			@media (min-width: 1600px) {
+				margin-right: 30px;
+			}
+		}
+		.wpc-label-content {
+			margin-top: -7px;
+			max-width: 200px;
+		}
+		.wpc-desc {
+			margin-bottom: 23px;
+		}
+	}
+	.wpc-meta {
+		align-self: flex-start;
+	}
+}
+@media (min-width: 767px) {
+	.wpc-tools-item {
+		flex-wrap: nowrap;
+	}
+}
+.woocommerce-page  {
+	.wp-list-table .column-name {
+		width: 12%;
+	}
+}

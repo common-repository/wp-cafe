@@ -1,0 +1,610 @@
+@import '_variable';
+
+
+/*==================================
+   default style
+=================================*/
+
+.mb-2{
+    margin-bottom: 10px !important;
+}
+.mb-3{
+    margin-bottom: 15px !important;
+}
+
+.mt-3{
+    margin-top: 15px !important;
+}
+
+.mt-4{
+    margin-top: 25px !important;
+}
+
+
+// wpc devider
+.wpc-devider {
+    display: block;
+    width: 100%;
+    height: 1px;
+    background: $gray-color;
+}
+
+// default btn
+.wpc-btn,
+.wpc_pro_order_tip_wrapper .wpc-btn,
+.action-button.wpc-btn,
+.attr-btn-primary,
+.reservation_form_submit.wpc-btn,
+.cancell_form_submit.wpc-btn,
+.settings-content-wraps .wpc-btn,
+body.woocomerce-layout-override-enable.woocommerce button.button.alt,
+body.woocomerce-layout-override-enable.woocommerce #respond input#submit,
+body.woocomerce-layout-override-enable .woocommerce button.button.alt,
+body.woocomerce-layout-override-enable.woocommerce-cart .woocommerce .button,
+.wpc-settings-dashboard .button-primary,
+.wpc-motd-order-btn.wpc-btn,
+.theme-rosa-lite .wpc_variation_popup_content .wpc-single-content button.single_add_to_cart_button {
+    font-size: 14px;
+    color: #ffffff;
+    background-color: $secondary-color;
+    @include border-radius(5px);
+    @include transition();
+    display: inline-block;
+    padding: 0 15px;
+    font-weight: 600;
+    text-decoration: none;
+    line-height: 45px;
+    border: none;
+    cursor: pointer;
+    text-transform: uppercase;
+    &:hover,
+    &:focus {
+        color: #fff;
+        border: none;
+        box-shadow: none !important;
+        background-color: $secondary-color;
+    }
+    &.wpc-edit-btn {
+        color: rgb(93, 120, 255);
+        background-color: rgb(238, 241, 255);
+        border: none;
+        padding: 0 15px;
+        &:hover {
+            color: $secondary-color;
+        }
+    }
+    &.wpc-delete-btn {
+        color: $secondary-color;
+        background-color: #ffeeee;
+        border: none;
+        padding: 0 15px;
+    }
+    &.wpc-btn-border{
+        border: 1px solid $primary-color;
+        background-color: transparent;
+        background-image: none;
+        color: $primary-color;
+        text-transform: uppercase;
+        &:hover{
+            border-color: $secondary-color;
+            color: $secondary-color;
+        }
+    }
+    &.wpc_mt_two{
+        padding: 0 20px;
+        font-size: 16px;
+        text-transform: capitalize;
+    }
+    &.wpc-btn-secondary{
+        color: var(--wpc-secondary-color);
+        border-color: var(--wpc-secondary-color);
+    }
+}
+.wpc-btn-text {
+    border-radius: 6px;
+    background-color: transparent;
+    border: 1px solid #0073AA;
+    font-size: 15px;
+    text-transform: capitalize;
+    color: #0073AA;
+    padding: 8px 12px;
+    line-height: 15px;
+    display: inline-block;
+    cursor: pointer;
+    font-weight: 700;
+    text-decoration: none;
+    &:hover {
+        border: 1px solid #0073AA;
+        background-color: transparent;
+        color: #0073AA;
+    }
+}
+.wpc-btn-close {
+    border-radius: 5px;
+    background-color: var(--wpc-dark-alt);
+    display: inline-block;
+    font-weight: 600;
+    color: #fff;
+    font-size: 12px;
+    width: 22px;
+    height: 22px;
+    line-height: 22px;
+    cursor: pointer;
+    align-self: center;
+}
+.wpc-settings {
+    .wpc-btn-upload {
+        background: transparent !important;
+        &:focus,
+        &:hover{
+            outline-style: none;
+        }
+    }
+}
+
+.wpc-motd-order-btn {
+    line-height: 24px;
+}
+.btn-danger {
+    padding: 10px 15px;
+    &:focus {
+        box-shadow: none;
+    }
+}
+
+.wpc-form-control,
+.attr-form-control {
+    background: #f1f5f8;
+    @include border-radius(5px);
+    border-color: transparent;
+    border: none;
+    height: 38px;
+    line-height: 38px;
+    box-shadow: none;
+    &:focus,
+    &.focused {
+        box-shadow: none;
+        border: none;
+    }
+ 
+}
+.wpc-display-none {
+    display: none;
+}
+
+/**
+* Css switch start for setting page
+*/
+
+//  radio button style
+.wpc-radio-btn {
+    >input[type="radio"] {
+        display: none;
+    }
+    >img {
+        cursor: pointer;
+        border: 1px solid $primary-color;
+        max-width: 100%;
+        @include border-radius((6px));
+    }
+    >input[type="radio"]:checked+img {
+        border: 1px solid $secondary-color;
+    }
+}
+
+// wpc title
+.wpc-title{
+  font-size: 22px;
+  font-weight: 700;
+  margin: 0 0 20px;
+}
+
+
+
+/*=============================
+// wpc label item
+===============================-- */
+.wpc-label-item {
+    margin-bottom: 0px;
+    background: #fff;
+    padding: 20px 30px;
+    border-radius: 8px;
+    &:not(:last-child) {
+        margin-bottom: 10px;
+    }
+    @media (min-width: 767px) {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    &:after{
+        display: table;
+        content: '';
+        clear: both;
+    }
+    .wpc-label {
+        margin-right: 33px;
+        flex-grow: 1;
+        float: left;
+        label, strong {
+            font-size: 15px;
+            line-height: 20px;
+            font-weight: 500;
+            margin: 0 0 5px;
+            color: var(--wpc-dark-color);
+            display: inline-block;
+        }
+        @media (min-width: 767px){
+            width: 260px;
+        }
+    }
+    .wpc-desc{
+        font-size: 13px;
+        line-height: 20px;
+        color: #87888B;
+        margin: 0 0 15px;
+    }
+    .wpc-meta {
+        input.wpcafe-admin-control-input {
+            height    : 0;
+            width     : 0;
+            visibility: hidden;
+            display   : none;
+          }
+          label.wpcafe_switch_button_label {
+            cursor       : pointer;
+            width        : 42px;
+            height       : 24px;
+            background   : #DDDDDD;
+            display      : inline-block;
+            border-radius: 100px;
+            position     : relative;
+            margin       : 0;
+            padding      : 0 !important;
+          }
+          label.wpcafe_switch_button_label:after {
+            content           : "";
+            position          : absolute;
+            top               : 4px;
+            left              : 4px;
+            width             : 16px;
+            height            : 16px;
+            background        : #fff;
+            border-radius     : 90px;
+            -webkit-transition: 0.3s;
+            -o-transition     : 0.3s;
+            transition        : 0.3s;
+            -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.21);
+            box-shadow        : 0 1px 3px rgba(0, 0, 0, 0.21);
+          }
+          .wpcafe_switch_button_label:before {
+            content       : attr(data-textalt);
+            position      : absolute;
+            right         : 10px;
+            top           : 50%;
+            transform     : translateY(-50%);
+            color         : #fff;
+            font-size     : 10px;
+            display       : inline-block;
+            text-transform: uppercase;
+            font-weight   : 600;
+          }
+          input.wpcafe-admin-control-input:checked + label.wpcafe_switch_button_label {
+            background: $secondary-color;
+          }
+          input.wpcafe-admin-control-input:checked + label.wpcafe_switch_button_label:after {
+            left             : calc(100% - 5px);
+            -webkit-transform: translateX(-100%);
+            -ms-transform    : translateX(-100%);
+            transform        : translateX(-100%);
+          }
+          input.wpcafe-admin-control-input:checked + label.wpcafe_switch_button_label:before {
+            content: attr(data-text);
+            right  : inherit;
+            left   : 10px;
+          }
+          label.show_label_text {
+            text-indent: 0px;
+          }
+    
+          .wpcafe-radio-btn > input[type=radio] {
+            display: none;
+          }
+          .wpcafe-radio-btn > img {
+            cursor               : pointer;
+            border               : 1px solid $secondary-color;
+            max-width            : 100%;
+            border-radius        : 6px;
+            -webkit-border-radius: 6px;
+            -ms-border-radius    : 6px;
+          }
+          .wpcafe-radio-btn > input[type=radio]:checked + img {
+            border: 1px solid #de0000;
+          }
+          .wpc-pro-text{
+              color: $primary-color;
+              margin-left: 5px;
+          }
+        .wpc-label-top {
+            font-size: 11px;
+			line-height: 13px;
+            font-weight: 600;
+			color: var(--wpc-label-color);
+			text-transform: uppercase;
+            display: block;
+            margin-bottom: 5px;
+        }
+    }
+    .wpc-form-control {
+        background-color: $white-color;
+    }
+    .wpc-settings-input,
+    .wpc-form-control {
+        width: 190px;
+        height: 42px;
+        padding: 10px 20px;
+        @include border-radius(6px);
+        border: 1px solid #D2D5DF;
+        font-size: 14px;
+        line-height: 20px;
+        color: var(--wpc-dark-color);
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        &:focus {
+            box-shadow: none;
+        }
+        &[readonly]{
+            background-color: #fff;
+        }
+        @media (max-width: 1350px) {
+            width: 170px;
+        }
+        &.wpc-desc {
+            height: auto;
+            padding: 0;
+            margin: 0;
+            border-color: transparent;
+            background: transparent;
+        }
+    }
+
+    .wpc-msg-box,
+    .msg-control-box {
+        height: 90px;
+    }
+    select {
+        padding: 0 30px 0 15px;
+        background-position: right 15px top 55%;
+    }
+    // select 2
+    .select2-container {
+        width: 190px !important;
+    }
+    .select2-selection--multiple,
+    .select2-selection--single {
+        border-radius: 5px;
+        border: 1px solid #ededed;
+    }
+    .select2-selection--single {
+        height: 44px;
+        .select2-selection__rendered {
+            line-height: 44px;
+        }
+        .select2-selection__arrow {
+            top: 8px;
+        }
+    }
+    .select2-selection--multiple {
+        .select2-selection__rendered {
+            padding: 10px 15px !important;
+        }
+        .select2-selection__choice {
+            background-color: #EEF0F4 !important;
+            border: 1px solid transparent !important;
+            margin-right: 10px !important;
+            padding: 5px !important;
+            font-size: 13px;
+            margin-bottom: 5px;
+            font-weight: 500;
+            color: var(--wpc-dark-alt);
+            text-transform: capitalize;
+        }
+        .select2-selection__choice__remove {
+            color: var(--wpc-white-color) !important;
+            cursor: pointer;
+            display: inline-block;
+            font-weight: bold;
+            margin-right: 2px;
+            background: #2F4858;
+            width: 14px;
+            height: 14px;
+            line-height: 12px;
+            border-radius: 4px;
+            text-align: center;
+            margin-right: 8px !important;
+        }
+    }
+    .select2-container--default.select2-container--focus .select2-selection--multiple,
+    .select2-container--default.select2-container--focus .select2-selection--single {
+        border-color: #ededed;
+    }
+
+    &.wpc-email-tag{
+        .wpc-label{
+            width: 320px;
+        }
+        .wpc-template-tags-box{
+            background-color: #EEF1FF;
+            margin-bottom: 10px;
+            padding: 7px 15px;
+            font-size: 12px;
+            @include border-radius(5px);
+            border-left: 3px solid $primary-color;
+        }
+    }
+
+}
+#wpc_reservation_meta {
+    .wpc_meta_field {
+        display: block;
+    }
+}
+.wpc-label-item {
+    .wpc-input-dark {
+        background-color: var(--wpc-dark-alt);
+        color: var(--wpc-white-color);
+        background: var(--wpc-dark-alt) url('../images/down_arrow.svg') no-repeat right 15px top 55%;
+        &:hover {
+            color: var(--wpc-white-color);
+        }
+        &:focus{
+            color: var(--wpc-white-color);
+            border-color: var(--wpc-dark-alt);
+        }
+    }
+}
+.group-switcher-fields {
+    margin-bottom: 10px;
+    .wpc-label-item {
+        margin-bottom: 0;
+        &:first-child {
+            border-bottom-left-radius: 0;
+            border-bottom-right-radius: 0;
+        }
+        &:last-child {
+            border-top-left-radius: 0;
+            border-top-right-radius: 0;
+        }
+    }
+}
+
+.mb-0{
+    margin-bottom: 0 !important;
+}
+.mb-15{
+    margin-bottom: 15px !important;
+}
+.mb-25{
+    margin-bottom: 25px !important;
+}
+.mb-30{
+    margin-bottom: 30px !important;
+}
+
+
+// tooltip
+
+/* title-tip down */
+
+  .wpc-tooltip[data-title]:after {
+    position: absolute;
+    top: -100%;
+    left: 0px;
+    z-index: 99999;
+    content: attr(data-title);
+    margin-top: 0;
+    padding: 1px 12px 2px;
+    overflow: hidden;
+    word-wrap: break-word;
+    font-size: inherit;
+    color: #FFF;
+    text-align: center;
+    background-color: #222;
+    box-sizing: border-box;
+    white-space: nowrap;
+    line-height: 24px;
+    font-size: 14px;
+    opacity: 0;
+    visibility: hidden;
+    //  transition: all ease 300ms;
+    
+  }
+  
+  .wpc-tooltip-angle{
+      transform: rotate(45deg);
+      position: absolute;
+      width: 12px;
+      height: 12px;
+      background: #333;
+      top: -56%;
+      left: 50%;
+      margin-left: -6px;
+      opacity: 0;
+      visibility: hidden;
+    //   transition: all ease 300ms;
+  }
+  .wpc-tooltip[data-title]:hover {
+    position: relative;
+    .wpc-tooltip-angle{
+      opacity: 1;
+      top: -46%;
+      visibility: visible;
+
+    }
+    &:after{
+        opacity: 1;
+        visibility: visible;
+    }
+  }
+  .wpc-tooltip.dashicons-update-alt{
+      position: relative;
+    .wpc-tooltip-angle {
+        top: -100%;
+    }
+    &:after{
+        top: -200%;
+        left: -50%;
+    }
+    &:hover{
+        .wpc-tooltip-angle {
+            opacity: 1;
+            top: -100%;
+            visibility: visible;
+
+        }
+    }
+  }
+  .wpc_tooltip{
+    padding: 1px 7px;
+    background: #b0b0b0;
+    float: right;
+    border-radius: 50%;
+    color: #fff;
+  }
+
+//   tooltip end
+@media (max-width: 1350px) {
+    .add_multi_time_block,
+    .remove_multi_time_block,
+    .remove_schedule_block,
+    .remove_pickup_block,
+    .remove_multi_schedule_block,
+    .remove_delivery_block {
+        &.wpc-tooltip[data-title]:after{
+            left: auto;
+            right: 8%;
+        }
+    }
+}
+
+.wpc-badge {
+    font-size: 12px;
+    text-transform: uppercase;
+    font-weight: 700;
+    padding: 5px 10px;
+    background-color: #FDE8CF;
+    color: #EF8202;
+    border: 1px solid #EF8202;
+    border-radius: 4px;
+    line-height: 12px;
+    display: inline-block;
+    letter-spacing: 0.5px;
+    &.success {
+        color: #0DB428;
+        border-color: #0DB428;
+        background-color: #D1F2D7;
+    }
+}

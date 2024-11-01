@@ -1,0 +1,558 @@
+@charset "UTF-8";
+/**
+ * All of the CSS for your admin-specific functionality should be
+ * included in this file.
+ */
+/*==================================
+   default style
+=================================*/
+a {
+  color: #0073aa;
+}
+
+.wpevently-devider {
+  display: block;
+  width: 100%;
+  height: 1px;
+  background: #f1f5f8;
+}
+
+.wpevently-btn,
+.btn-primary,
+.wpevently-settings-dashboard .button-primary {
+  font-size: 16px;
+  line-height: 28px;
+  color: #fff;
+  background: #5d78ff;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -ms-border-radius: 5px;
+  transition: all 0.4s ease;
+  -webkit-transition: all 0.4s ease;
+  -moz-transition: all 0.4s ease;
+  -ms-transition: all 0.4s ease;
+  display: inline-block;
+  padding: 5px 20px;
+  font-weight: 500;
+  text-decoration: none;
+  line-height: 35px;
+  box-shadow: 0 1px 5px rgba(66, 133, 244, 0.5);
+  border: none;
+  cursor: pointer;
+}
+.wpevently-btn:hover, .wpevently-btn:focus,
+.btn-primary:hover,
+.btn-primary:focus,
+.wpevently-settings-dashboard .button-primary:hover,
+.wpevently-settings-dashboard .button-primary:focus {
+  color: #fff;
+  border: none;
+  box-shadow: none !important;
+  background-color: #de0000;
+}
+.wpevently-btn.wpevently-edit-btn,
+.btn-primary.wpevently-edit-btn,
+.wpevently-settings-dashboard .button-primary.wpevently-edit-btn {
+  color: #5d78ff;
+  background-color: #eef1ff;
+  border: none;
+  padding: 0 15px;
+}
+.wpevently-btn.wpevently-edit-btn:hover,
+.btn-primary.wpevently-edit-btn:hover,
+.wpevently-settings-dashboard .button-primary.wpevently-edit-btn:hover {
+  color: #de0000;
+}
+.wpevently-btn.wpevently-delete-btn,
+.btn-primary.wpevently-delete-btn,
+.wpevently-settings-dashboard .button-primary.wpevently-delete-btn {
+  color: #de0000;
+  background-color: #ffeeee;
+  border: none;
+  padding: 0 15px;
+}
+
+.btn-danger {
+  padding: 10px 15px;
+}
+.btn-danger:focus {
+  box-shadow: none;
+}
+
+.wpevently-form-control {
+  background: #f1f5f8;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -ms-border-radius: 5px;
+  border-color: transparent;
+  border: none;
+  height: 45px;
+  line-height: 45px;
+  box-shadow: none;
+}
+.wpevently-form-control:focus, .wpevently-form-control.focused {
+  box-shadow: none;
+  border: none;
+}
+
+/**
+* Css switch start for setting page
+*/
+.wpevently-meta input.wpevently-admin-control-input {
+  height: 0;
+  width: 0;
+  visibility: hidden;
+  display: none;
+}
+.wpevently-meta label.wpevently_switch_button_label {
+  cursor: pointer;
+  width: 55px;
+  height: 24px;
+  background: #DDDDDD;
+  display: block;
+  border-radius: 100px;
+  position: relative;
+  margin: 0;
+  padding: 0 !important;
+}
+.wpevently-meta label.wpevently_switch_button_label:after {
+  content: "";
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  width: 15px;
+  height: 15px;
+  background: #fff;
+  border-radius: 90px;
+  -webkit-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
+  -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.21);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.21);
+}
+.wpevently-meta .wpevently_switch_button_label:before {
+  content: "No";
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #fff;
+  font-size: 10px;
+  display: inline-block;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+.wpevently-meta input.wpevently-admin-control-input:checked + label.wpevently_switch_button_label {
+  background: #5d78ff;
+}
+.wpevently-meta input.wpevently-admin-control-input:checked + label.wpevently_switch_button_label:after {
+  left: calc(100% - 5px);
+  -webkit-transform: translateX(-100%);
+  -ms-transform: translateX(-100%);
+  transform: translateX(-100%);
+}
+.wpevently-meta input.wpevently-admin-control-input:checked + label.wpevently_switch_button_label:before {
+  content: "Yes";
+  right: inherit;
+  left: 10px;
+}
+.wpevently-meta label.show_label_text {
+  text-indent: 0px;
+}
+
+.wpevently-radio-btn > input[type=radio] {
+  display: none;
+}
+.wpevently-radio-btn > img {
+  cursor: pointer;
+  border: 1px solid #5d78ff;
+  max-width: 100%;
+  border-radius: 6px;
+  -webkit-border-radius: 6px;
+  -ms-border-radius: 6px;
+}
+.wpevently-radio-btn > input[type=radio]:checked + img {
+  border: 1px solid #de0000;
+}
+
+/*=============================
+//  evently top label manu
+===============================-- */
+.toplevel_page_wpevently-events-manager .toplevel_page_wpevently-events-manager {
+  background: linear-gradient(-45deg, #87ded6, #40476b, #23a6d5, #0bb78e) !important;
+  animation: Gradient 15s ease infinite;
+  background-size: 400% 400% !important;
+  color: #fff !important;
+}
+
+@keyframes Gradient {
+  0%, 100% {
+    background-position: 0 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+.wpevently-social-icon-search-input {
+  max-height: 300px;
+  overflow: hidden;
+}
+
+.wpevently-social-icon-search-input .input-group .input-group-addon > i {
+  font-size: 20px;
+  margin-top: 10px;
+}
+
+/*=============================
+// wpevently settings
+===============================-- */
+.wpevently-wrap {
+  padding: 20px;
+  background-color: #fff;
+}
+.wpevently-wrap.wrap > h2:first-child {
+  font-weight: 600;
+  font-size: 30px;
+  margin-bottom: 25px;
+  position: relative;
+  padding-left: 40px;
+}
+.wpevently-wrap.wrap > h2:first-child:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  font-family: "dashicons";
+  top: 0;
+  font-size: 30px;
+  line-height: 60px;
+  color: #5d78ff;
+}
+.wpevently-wrap form h2 {
+  font-size: 24px;
+  position: relative;
+  margin-bottom: 25px;
+  font-weight: 600;
+}
+.wpevently-wrap form h2:after {
+  position: absolute;
+  left: 0;
+  bottom: -15px;
+  width: 60px;
+  height: 4px;
+  background: #5d78ff;
+  content: "";
+}
+.wpevently-wrap h2.nav-tab-wrapper {
+  margin-bottom: 30px;
+  border-bottom: none;
+}
+.wpevently-wrap h2.nav-tab-wrapper .nav-tab {
+  margin: 0 -1px 0 0;
+  background-color: #fff;
+  color: #707070;
+  font-size: 16px;
+  line-height: 18px;
+  font-weight: 600;
+  border: none !important;
+  border: 1px solid #ededed !important;
+  padding: 14px 25px;
+  text-decoration: none;
+}
+.wpevently-wrap h2.nav-tab-wrapper .nav-tab:focus {
+  outline: none;
+  box-shadow: none;
+}
+.wpevently-wrap h2.nav-tab-wrapper .nav-tab.nav-tab-active {
+  background-color: #5d78ff;
+  color: #fff;
+}
+.wpevently-wrap h2.nav-tab-wrapper .nav-tab:first-child {
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
+}
+.wpevently-wrap h2.nav-tab-wrapper .nav-tab:last-child {
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
+.wpevently-wrap .form-table {
+  margin-bottom: 30px;
+}
+
+/*=============================
+// wpevently label item
+===============================-- */
+.evently-label-item {
+  overflow: hidden;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  margin-bottom: 50px;
+}
+.evently-label-item .wpevently-label {
+  width: 260px;
+  margin-right: 33px;
+  float: left;
+}
+.evently-label-item .wpevently-label label {
+  font-size: 18px;
+  line-height: 21px;
+  font-weight: 600;
+  margin: 0;
+  color: #101010;
+  display: inline-block;
+}
+.evently-label-item .wpevently-meta {
+  float: left;
+}
+.evently-label-item .wpevently-form-control {
+  background-color: #fff;
+}
+.evently-label-item .wpevently-setting-input,
+.evently-label-item .wpevently-form-control {
+  width: 300px;
+  height: 44px;
+  padding: 10px 25px;
+  border-radius: 5px;
+  border: 1px solid #ededed;
+  -webkit-box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.05);
+  box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.05);
+  font-size: 14px;
+  line-height: 16px;
+  color: #666;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+.evently-label-item .wpevently-setting-input:focus,
+.evently-label-item .wpevently-form-control:focus {
+  border-color: #5d78ff;
+}
+.evently-label-item .msg-control-box {
+  height: 90px;
+}
+.evently-label-item select {
+  padding: 0 30px 0 15px;
+}
+.evently-label-item .select2-container {
+  width: 300px !important;
+}
+.evently-label-item .select2-selection--multiple,
+.evently-label-item .select2-selection--single {
+  border-radius: 5px;
+  border: 1px solid #ededed;
+  -webkit-box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.05);
+  box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.05);
+}
+.evently-label-item .select2-selection--single {
+  height: 44px;
+}
+.evently-label-item .select2-selection--single .select2-selection__rendered {
+  line-height: 44px;
+}
+.evently-label-item .select2-selection--single .select2-selection__arrow {
+  top: 8px;
+}
+.evently-label-item .select2-container--default.select2-container--focus .select2-selection--multiple,
+.evently-label-item .select2-container--default.select2-container--focus .select2-selection--single {
+  border-color: #5d78ff;
+}
+
+/*=============================
+// speaker info settings
+===============================-- */
+body.post-type-wp-evently-speaker,
+body.post-type-wp-evently-schedule {
+  background-color: #fff;
+}
+body.post-type-wp-evently-speaker #wp_evently_speaker_settings,
+body.post-type-wp-evently-speaker #wpcafe-repeater-item,
+body.post-type-wp-evently-schedule #wp_evently_speaker_settings,
+body.post-type-wp-evently-schedule #wpcafe-repeater-item {
+  margin-top: -50px;
+}
+body.post-type-wp-evently-speaker .wrap h1.wp-heading-inline,
+body.post-type-wp-evently-schedule .wrap h1.wp-heading-inline {
+  font-weight: 600;
+}
+
+#wp_evently_speaker_settings.postbox,
+#wpevently_event_settings.postbox,
+#wpcafe-repeater-item.postbox {
+  border: 1px solid #f5f5f5;
+  box-shadow: none;
+}
+#wp_evently_speaker_settings .inside,
+#wpevently_event_settings .inside,
+#wpcafe-repeater-item .inside {
+  padding: 0 25px 12px;
+}
+#wp_evently_speaker_settings h2.hndle,
+#wpevently_event_settings h2.hndle,
+#wpcafe-repeater-item h2.hndle {
+  font-size: 18px;
+  margin-bottom: 30px;
+  border-bottom: 1px solid #f5f5f5;
+}
+#wp_evently_speaker_settings .evently-label-item .msg-control-box,
+#wpevently_event_settings .evently-label-item .msg-control-box,
+#wpcafe-repeater-item .evently-label-item .msg-control-box {
+  height: 90px;
+  padding: 20px 25px;
+}
+#wp_evently_speaker_settings .wpevently_event_upload_image_button,
+#wpevently_event_settings .wpevently_event_upload_image_button,
+#wpcafe-repeater-item .wpevently_event_upload_image_button {
+  max-width: 100px;
+  display: block;
+}
+#wp_evently_speaker_settings .evently-modal-search-box,
+#wpevently_event_settings .evently-modal-search-box,
+#wpcafe-repeater-item .evently-modal-search-box {
+  margin-bottom: 15px;
+}
+#wp_evently_speaker_settings .wpevently_speaker_socials .wpevently-repeater-wrap,
+#wp_evently_speaker_settings .wpevently-social-clearfix .wpevently-repeater-wrap,
+#wpevently_event_settings .wpevently_speaker_socials .wpevently-repeater-wrap,
+#wpevently_event_settings .wpevently-social-clearfix .wpevently-repeater-wrap,
+#wpcafe-repeater-item .wpevently_speaker_socials .wpevently-repeater-wrap,
+#wpcafe-repeater-item .wpevently-social-clearfix .wpevently-repeater-wrap {
+  display: block;
+  width: 100%;
+  overflow: hidden;
+}
+#wp_evently_speaker_settings .wpevently_speaker_socials .wpevently-form-control,
+#wp_evently_speaker_settings .wpevently-social-clearfix .wpevently-form-control,
+#wpevently_event_settings .wpevently_speaker_socials .wpevently-form-control,
+#wpevently_event_settings .wpevently-social-clearfix .wpevently-form-control,
+#wpcafe-repeater-item .wpevently_speaker_socials .wpevently-form-control,
+#wpcafe-repeater-item .wpevently-social-clearfix .wpevently-form-control {
+  width: 25%;
+  float: left;
+  margin-right: 10px;
+}
+#wp_evently_speaker_settings .wpevently-social-icon-list i,
+#wpevently_event_settings .wpevently-social-icon-list i,
+#wpcafe-repeater-item .wpevently-social-icon-list i {
+  padding: 10px;
+  border: 1px solid #eaeaea;
+  cursor: pointer;
+}
+#wp_evently_speaker_settings .wpevently-social-clearfix .btn-danger,
+#wpevently_event_settings .wpevently-social-clearfix .btn-danger,
+#wpcafe-repeater-item .wpevently-social-clearfix .btn-danger {
+  padding: 10px 10px;
+  border-radius: 50%;
+  line-height: 20px;
+}
+#wp_evently_speaker_settings .wpevently-social-clearfix .social-repeater .add-social,
+#wpevently_event_settings .wpevently-social-clearfix .social-repeater .add-social,
+#wpcafe-repeater-item .wpevently-social-clearfix .social-repeater .add-social {
+  display: block;
+  width: 100%;
+}
+
+/*=============================
+//  wpevently-settings-dashboard
+===============================-- */
+.wpevently-settings-dashboard {
+  background-color: #fff;
+  padding: 40px;
+}
+.wpevently-settings-dashboard h2.wpevently-main-title {
+  font-size: 30px;
+  line-height: 42px;
+  color: #101010;
+  margin: 0;
+  padding: 0;
+  font-weight: 600;
+  margin-bottom: 30px;
+}
+.wpevently-settings-dashboard h2.wpevently-main-title i {
+  font-size: 34px;
+  color: #5d78ff;
+  margin-right: 24px;
+  line-height: 48px;
+}
+.wpevently-settings-dashboard .wpevently-settings-tab {
+  margin-bottom: 40px;
+}
+.wpevently-settings-dashboard .wpevently-settings-tab .nav-tab-wrapper {
+  border-bottom: none;
+}
+.wpevently-settings-dashboard .wpevently-settings-tab .nav-tab-wrapper a {
+  float: none;
+  border: none;
+  display: inline-block;
+  margin: 0;
+  background-color: #fff;
+  color: #707070;
+  font-size: 18px;
+  line-height: 18px;
+  font-weight: 600;
+  border: none !important;
+  border: 1px solid #EDEDED !important;
+  padding: 14px 30px;
+  margin-right: -6px;
+  text-decoration: none;
+}
+.wpevently-settings-dashboard .wpevently-settings-tab .nav-tab-wrapper a:focus {
+  outline: none;
+  box-shadow: none;
+}
+.wpevently-settings-dashboard .wpevently-settings-tab .nav-tab-wrapper a:first-of-type {
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+.wpevently-settings-dashboard .wpevently-settings-tab .nav-tab-wrapper a:last-of-type {
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+.wpevently-settings-dashboard .wpevently-settings-tab .nav-tab-wrapper a.nav-tab-active {
+  background-color: #5d78ff;
+  color: #fff;
+}
+.wpevently-settings-dashboard .wpevently-admin-container {
+  border: none;
+  box-shadow: none;
+}
+.wpevently-settings-dashboard .wpevently-settings-section {
+  display: none;
+}
+.wpevently-settings-dashboard .wpevently-settings-section.active {
+  display: block;
+}
+
+/*=============================
+schedule settings
+===============================-- */
+#wpcafe-repeater-item .wpevently-title {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+#wpcafe-repeater-item .wpcafe-food-menu-collapsible,
+.wpcafe-food-menu-collapsible {
+  background-color: #f2f2f2;
+  padding: 15px;
+  overflow: hidden;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 30px;
+  cursor: pointer;
+}
+#wpcafe-repeater-item .wpcafe-food-menu-collapsible i ,
+.wpcafe-food-menu-collapsible i
+{
+  float: right;
+  background: #de0000;
+  color: #fff;
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  border-radius: 50%;
+}
+#wpcafe-repeater-item .wpcafe-repeater-collapsible-content {
+  padding: 40px 40px 0;
+  border: 1px solid #f2f2f2;
+}

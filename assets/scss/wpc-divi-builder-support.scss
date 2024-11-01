@@ -1,0 +1,1254 @@
+@import '_theme-compatible';
+@import '_variable';
+
+body.et_divi_builder  #et-boc .et-l .wpc-divi-parent-wrap {  // its parent class for divi support
+    @import '_base';
+    @import '_framework';
+    .wpc_log_message,
+    .wpc_error_message,.hide_field, .wpc_success_message {
+        display: none;
+    }
+
+/*-----------------
+Food menu 
+-----------------*/
+
+.wpc-food-menu-item {
+    position     : relative;
+    margin-bottom: 20px;
+
+    .wpc-food-menu-thumb {
+        position: relative;
+        img {
+            width: 100%;
+            @include transform(scale(1));
+            @include transition();
+        }
+
+        a {
+            line-height: 0px;
+            display    : block;
+            width      : 100%;
+            height     : 100%;
+            overflow   : hidden;
+            position   : relative;
+        }
+
+        @media (max-width: 767px) {
+            margin-bottom: 15px;
+        }
+    }
+
+    .wpc-menu-tag {
+        padding: 0;
+        margin : 0;
+
+        li {
+            font-size     : 11px;
+            line-height   : 22px;
+            margin-bottom : 5px;
+            background    : $primary-color;
+            padding       : 0 7px;
+            font-weight   : 700;
+            color         : #fff;
+            text-transform: uppercase;
+            display       : inline-block;
+            margin-right  : 5px;
+            @include border-radius(36px);
+        }
+    }
+
+    .wpc-menu-tag-wrap {
+        .wpc-menu-tag {
+            display: inline-block;
+        }
+    }
+
+    .wpc-food-inner-content {
+        position: relative;
+
+        .wpc-post-title {
+            font-size: 24px;
+            margin   : 0 0 15px;
+            position : relative;
+
+            a {
+                color: #232323;
+                @include transition();
+                display      : inline-block;
+                position     : relative;
+                padding-right: 10px;
+
+                &:hover {
+                    color: $primary-color;
+                }
+            }
+
+            &.wpc-title-with-border {
+                display: flex;
+                flex-wrap: wrap;
+                a {
+                    flex     : 0 0 auto;
+                    max-width: 80%;
+                }
+
+                .wpc-title-border {
+                    flex             : 100;
+                    align-self       : flex-end;
+                    background       : radial-gradient(circle, #444444, #444444 10%, transparent 50%, transparent);
+                    background-size  : 4px 3px;
+                    height           : 4px;
+                    background-repeat: repeat-x;
+                    margin-left      : 10px;
+                    margin-right     : 10px;
+                    position         : relative;
+                    top              : -2px;
+
+                }
+
+                .wpc-menu-currency {
+                    align-self: flex-end;
+                    flex      : 0 0 auto;
+                    float     : none;
+                }
+            }
+        }
+
+        .wpc-menu-currency {
+            color       : $primary-color;
+            float       : right;
+            padding-left: 15px;
+            position    : relative;
+
+            del {
+                font-size: 14px;
+                opacity  : 0.5;
+            }
+
+            ins {
+                text-decoration: none;
+            }
+        }
+
+        p {
+            padding-right: 50px;
+            min-height: 40px;
+        }
+    }
+
+    .wpc-menu-currency {
+        .woocommerce-price-suffix {
+            display: none;
+        }
+    }
+
+    // wpc add to cart
+    .wpc-add-to-cart {
+        position: absolute;
+        right   : 0;
+        bottom  : -10px;
+
+        a {
+            line-height: 35px;
+            @include border-radius(36px);
+            background-color: $primary-color;
+            display         : inline-block;
+            text-align      : center;
+            color           : #fff;
+            padding         : 0;
+            font-size: 16px;
+            padding: 5px 15px;
+            @include transition();
+
+            i {
+                line-height: inherit;
+                display: inline-block;
+                margin: auto;
+            }
+          
+            .adding,
+            .added{
+             transform: scale(0);
+             @include transition();
+             opacity: 0;
+             visibility: hidden;
+             left: 15px;
+             width: 0;
+             display: inline-flex;
+            }
+            
+            &.cart-text-no-added{
+                span{
+                    display: none;
+                }
+            }
+            &.cart-text-added{
+                span{
+                    margin-right: 5px;
+                }
+            }
+
+            &.wc-forward {
+                display: none;
+            }
+
+            &.loading,
+            &.added {
+                 span{
+                     margin: 0 5px;
+                 }
+                .add-cart-text{
+                  opacity: 0;
+                  visibility: hidden;
+                  display: none;
+                }
+                i{
+                    width: 17px;
+                }
+             
+            }
+         
+            &.added {
+                .added{
+                    transform: scale(1);
+                    opacity: 1;
+                    visibility: visible;
+                    width: auto;
+                }
+                i{
+                    &::before{
+                        content:url('../fonts/check_mark.svg');
+                    }
+                }
+            }
+            &.loading {
+                i{
+                    -webkit-animation: spin 2s linear infinite; /* Safari */
+                    animation: spin 2s linear infinite;
+                    &::before{
+                        content:url('../fonts/spinner.svg');
+                    }
+                }
+                .adding{
+                    transform: scale(1);
+                    opacity: 1;
+                    visibility: visible;
+                    width: auto;
+                }
+            }
+        }
+
+    }
+
+    &:hover {
+        .wpc-food-menu-thumb {
+            img {
+                @include transform(scale(1.1));
+            }
+        }
+    }
+    &.style2{
+        border: 2px solid #eaeaea;
+        @include transition();
+        .wpc-menu-currency{
+            position: absolute;
+            right: 10px;
+            top: 10px;
+            z-index: 1;
+            background: #FFE119;
+            padding: 0 10px;
+            border-radius: 3px;
+            font-weight: 700;
+            line-height: 24px;
+        }
+        .wpc-food-menu-thumb{
+            margin: -3px;
+        }
+        .wpc-food-inner-content{
+            padding: 20px;
+            p{
+                margin: 0;
+                padding-right: 0;
+                min-height: auto;
+             }
+        }
+        .wpc-add-to-cart{
+            bottom: 00px;
+            width: 100%;
+            opacity: 0;
+            visibility: hidden;
+            @include transition();
+             a{
+                width: 100%;
+                height: auto;
+                @include border-radius(0);
+                line-height: 20px;
+                justify-content: center;
+                display: flex;
+            }
+        }
+        .wpc-external-product-link{
+            position: absolute;
+            bottom: 0;
+            a{
+                line-height: 20px;
+            }
+        }
+        &:hover{
+            border-color: $primary-color;
+            .wpc-add-to-cart{
+                opacity: 1;
+                visibility: visible;
+            }
+        }
+    }
+}
+
+
+  
+@-moz-keyframes spinner-loader {
+    0% {
+      -moz-transform: rotate(0deg);
+      transform: rotate(0deg);
+    }
+    100% {
+      -moz-transform: rotate(360deg);
+      transform: rotate(360deg);
+    }
+  }
+  @-webkit-keyframes spinner-loader {
+    0% {
+      -webkit-transform: rotate(0deg);
+      transform: rotate(0deg);
+    }
+    100% {
+      -webkit-transform: rotate(360deg);
+      transform: rotate(360deg);
+    }
+  }
+  @keyframes spinner-loader {
+    0% {
+      -moz-transform: rotate(0deg);
+      -ms-transform: rotate(0deg);
+      -webkit-transform: rotate(0deg);
+      transform: rotate(0deg);
+    }
+    100% {
+      -moz-transform: rotate(360deg);
+      -ms-transform: rotate(360deg);
+      -webkit-transform: rotate(360deg);
+      transform: rotate(360deg);
+    }
+  }
+
+  
+
+
+/*-----------------
+Food menu tab
+-----------------*/
+.wpc-food-tab-wrapper {
+    .wpc-nav {
+        padding: 0;
+        margin : 0 0 40px;
+
+        li {
+            display: inline-block;
+            color  : $primary-color;
+
+            a {
+                font-size     : 16px;
+                padding       : 5px 15px;
+                color         : #232323;
+                border-bottom : 3px solid transparent;
+                position      : relative;
+                font-weight   : 600;
+                text-transform: uppercase;
+                display       : block;
+
+                &:after {
+                    border-color: #5d78ff transparent transparent transparent;
+                    content     : "";
+                    width       : 0;
+                    height      : 0;
+                    border-style: solid;
+                    border-width: 10px 10px 0 10px;
+                    position    : absolute;
+                    left        : 0;
+                    bottom      : -10px;
+                    right       : 0;
+                    margin      : auto;
+                    opacity     : 0;
+                }
+
+                i,
+                svg {
+                    margin : auto;
+                    display: block;
+                }
+
+                &.wpc-active {
+                    color              : $primary-color;
+                    border-bottom-color: $primary-color;
+
+                    &:after {
+                        opacity: 1;
+                    }
+                }
+            }
+        }
+    }
+
+    // wpc tab content
+    .wpc-tab-content {
+        .wpc-tab {
+            display: none;
+
+            &.tab-active {
+                display                    : block;
+                -webkit-animation-name     : fadeUp;
+                animation-name             : fadeUp;
+                -webkit-animation-duration : 1.5s;
+                animation-duration         : 1.5s;
+                -webkit-animation-fill-mode: both;
+                animation-fill-mode        : both;
+            }
+        }
+
+    }
+}
+.wpc-tab-block1{
+    .wpc-menu-tag-wrap{
+        line-height: 0;
+    }
+}
+
+@-webkit-keyframes fadeUp {
+    from {
+        opacity          : 0;
+        -webkit-transform: translate3d(0, 3%, 0);
+        transform        : translate3d(0, 3%, 0);
+    }
+
+    to {
+        opacity          : 1;
+        -webkit-transform: translate3d(0, 0, 0);
+        transform        : translate3d(0, 0, 0);
+    }
+}
+
+@keyframes fadeUp {
+    from {
+        opacity          : 0;
+        -webkit-transform: translate3d(0, 3%, 0);
+        transform        : translate3d(0, 3%, 0);
+    }
+
+    to {
+        opacity          : 1;
+        -webkit-transform: translate3d(0, 0, 0);
+        transform        : translate3d(0, 0, 0);
+    }
+}
+
+
+// Reservation form 
+.wpc-reservation-field {
+    &.date {
+        .wpc-form-control {
+            display: none;
+        }
+
+        .flatpickr-months .flatpickr-prev-month,
+        .flatpickr-months .flatpickr-next-month {
+            top: 0;
+        }
+
+        .flatpickr-months .flatpickr-prev-month svg,
+        .flatpickr-months .flatpickr-next-month svg {
+            fill: #ffffff;
+        }
+
+        .flatpickr-current-month .flatpickr-monthDropdown-months .flatpickr-monthDropdown-month {
+            background-color: rgb(93, 120, 255);
+            border          : none;
+            box-shadow      : none;
+        }
+
+        .flatpickr-current-month .flatpickr-monthDropdown-months .flatpickr-monthDropdown-month:hover {
+            border    : none;
+            border    : none;
+            box-shadow: none;
+        }
+
+        .flatpickr-months .flatpickr-prev-month.flatpickr-next-month,
+        .flatpickr-months .flatpickr-next-month.flatpickr-next-month {
+            right: 20px;
+        }
+
+        .flatpickr-months .flatpickr-prev-month.flatpickr-prev-month,
+        .flatpickr-months .flatpickr-next-month.flatpickr-prev-month {
+            left: 30px;
+        }
+
+
+        .flatpickr-day {
+            height     : 54px;
+            line-height: 49px;
+            background: rgba(255,255,255, 0.10);
+            border: 2px solid #5d78ff;
+            &:hover,
+            &.selected {
+                background-color: #fff;
+                color           : #232323;
+            }
+        }
+
+        .flatpickr-innerContainer {
+            margin-top: 25px;
+        }
+
+        .flatpickr-current-month .flatpickr-monthDropdown-months {
+            margin     : auto;
+            font-weight: 600;
+            display    : inline-block;
+
+        }
+
+        .numInputWrapper {
+            width: 7ch;
+
+            .cur-year {
+                font-weight: 600;
+                color      : #fff;
+            }
+
+            span {
+                opacity: 1;
+            }
+
+            span.arrowDown:after {
+                border-top-color: rgba(255, 255, 255);
+            }
+
+            span.arrowUp:after {
+                border-bottom-color: rgba(255, 251, 251);
+            }
+        }
+        &.wpc-reservation-calender-field{
+            padding: 65px 40px;
+            @include border-radius(10px);
+            background-color: $primary-color;
+
+        }
+        .wpc-choose-date{
+            text-align: center;
+            font-size: 26px;
+            font-weight: 600;
+            color: #fff;
+        }
+
+        .flatpickr-calendar {
+            width           : 100%;
+            box-shadow      : none;
+            background      : transparent;
+        }
+
+        .flatpickr-calendar .dayContainer {
+            width    : 100%;
+            min-width: 100%;
+            max-width: 100%;
+        }
+
+        .flatpickr-calendar .flatpickr-days,
+        .flatpickr-calendar .flatpickr-day {
+            width    : 100%;
+            max-width: 100%;
+            text-align: center;
+        }
+
+        .flatpickr-day.flatpickr-disabled,
+        .flatpickr-day.flatpickr-disabled:hover {
+            cursor          : not-allowed;
+            color           : rgba(255, 255, 255, 0.4);
+            background-color: transparent;
+        }
+
+        .flatpickr-current-month .flatpickr-monthDropdown-months,
+        span.flatpickr-weekday,
+        .flatpickr-day {
+            color: #fff;
+            @include border-radius(8px);
+        }
+    }
+
+}
+
+.flatpickr-time input:hover,
+.flatpickr-time .flatpickr-am-pm:hover,
+.flatpickr-time input:focus,
+.flatpickr-time .flatpickr-am-pm:focus {
+    background: #fff;
+}
+
+.flatpickr-calendar.noCalendar {
+    .numInput {
+        border    : none;
+        box-shadow: none;
+    }
+
+    &.flatpickr-calendar {
+        width: 215px;
+    }
+}
+
+// resercation form date picker
+
+.wpc-reservation-form {
+    .wpc_reservation_form {
+        padding   : 40px;
+        box-shadow: 0px 12px 25px rgba(0, 0, 0, 0.08);
+        @include border-radius(10px);
+
+        &.wpc_reservation_cancel_form {
+            display: none;
+        }
+    }
+    .wpc_success_message,
+    .wpc_error_message{
+        margin-bottom: 30px;
+    }
+    span.dashicons.dashicons-clock {
+        position: absolute;
+        right: 20px;
+        top: 20px;
+        bottom: 0;
+        margin: auto;
+        color: #777;
+        font-size: 18px;
+    }
+    input[type=number]::-webkit-inner-spin-button, 
+    input[type=number]::-webkit-outer-spin-button { 
+    -webkit-appearance: none; 
+    margin: 0; 
+    }
+    input[type=number] {
+        -moz-appearance:textfield; /* Firefox */
+    }
+
+    .wpc_bg_image{
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        @include border-radius(10px);
+        @media (max-width: 768px) {
+            margin: 0 15px;
+        }
+    }
+
+    .wpc_reservation_form_disabled,
+    .wpc_cancell_form_submit_disabled {
+        opacity: 0.5;
+        cursor : not-allowed;
+    }
+
+
+    .wpc-reservation-field {
+        margin-bottom: 12px;
+        &.message {
+            margin-bottom: 20px;
+        }
+        img {
+            border-radius: 10px;
+        }
+
+        label {
+            font-size: 15px;
+            line-height: 30px;
+            font-weight: 500;
+            color: #666;
+
+            .wpc_required {
+                color: #f00;
+            }
+        }
+
+        .wpc-form-control {
+            width           : 100%;
+            background-color: #f7f7f7;
+            border          : none;
+            border   : none;
+            @include border-radius(4);
+            height   : 45px;
+            font-size: 13px;
+            color    : #878787;
+            padding  : 0 15px;
+
+            &:focus,
+            &:active {
+                border-bottom-color: $primary-color;
+            }
+
+            &#wpc-message {
+                height: 60px;
+            }
+            &::placeholder{
+                color: #999;
+            }
+
+        }
+    }
+
+    #wpc_cancel_request,
+    #wpc_book_table {
+        cursor      : pointer;
+        font-size   : 15px;
+        font-weight : 600;
+        color       : $primary-color;
+        border-bottom: 2px solid #5D78FF;
+        margin-left: 10px;
+    }
+
+    &.hide-cancel-text {
+        #wpc_cancel_request {
+            display: none;
+        }
+    }
+
+    .wpc_reservation_user_info {
+        background-color: $primary-color;
+        @include border-radius(10px);
+
+        ul {
+            padding      : 0;
+            margin:0 0 40px;
+
+            li {
+                list-style   : none;
+                font-size    : 17px;
+                margin-bottom: 15px;
+                color        : #fff;
+
+                .wpc-user-field-info {
+                    min-width: 80px;
+                    display  : inline-block;
+                }
+            }
+        }
+
+        .wpc_log_message {
+            @include border-radius(8px);
+            background-color: #F1AE1F;
+            color           : #fff;
+            border-color    : #F1AE1F;
+        }
+    }
+
+    .confirm_booking_btn,
+    .cancell_form_submit {
+        margin-right: 10px;
+        background-color: $secondary-color;
+        position: relative;
+
+        &.loading{
+            padding-right: 25px;
+            &:before{
+                content: url("../fonts/spinner.svg")  !important;
+                position: absolute;
+                right: 4px;
+                top: calc(50% - 16px);
+                /* Safari */
+                animation: spin 2s linear infinite !important;
+                z-index: 1;
+            }
+        }
+    }
+
+    .edit_booking_btn {
+        background: transparent;
+        border    : 1px solid #fff;
+        padding   : 4px 20px;
+    }
+
+}
+
+// reservation second form
+.wpc_reservation_form_two {
+    display: none;
+}
+
+.wpc_error_message {
+    text-align: center;
+    background: #ff8f8f4a;
+    padding   : 10px;
+}
+
+.wpc_log_message {
+    color                : #4F8A10;
+    background-color     : #DFF2BF;
+    border               : 1px solid #bce8f1;
+    -webkit-border-radius: 2px;
+    -moz-border-radius   : 2px;
+    border-radius        : 2px;
+    padding              : 10px;
+    text-align           : center;
+}
+
+.wpc_cancell_log_message {
+    display         : none;
+    color           : #4F8A10;
+    background-color: #DFF2BF;
+    border          : 1px solid #bce8f1;
+    border-radius   : 2px;
+    padding         : 10px;
+    text-align      : center;
+}
+
+// date picker
+.picker__holder {
+    .picker__box {
+        background-color: $primary-color;
+        @include border-radius(5px);
+        border : none;
+        padding: 10px 20px;
+    }
+
+    .picker__table {
+        tr {
+
+            th,
+            td {
+                border    : none;
+                text-align: center;
+                font-size : 16px;
+            }
+        }
+
+        tbody>tr:nth-child(odd)>td,
+        tbody>tr:nth-child(odd)>th {
+            background-color: transparent;
+        }
+    }
+
+    .picker__month,
+    .picker__year {
+        color: #fff;
+    }
+
+    .picker__day,
+    .picker__weekday {
+        color: #fff;
+        @include transition();
+        @include border-radius(5px);
+    }
+
+    tbody tr:hover>td,
+    tbody tr:hover>th {
+        background-color: transparent;
+    }
+
+    .picker__footer {
+
+        .picker__button--today,
+        .picker__button--clear,
+        .picker__button--close {
+            border          : none;
+            color           : #fff;
+            background-color: rgba(0, 0, 0, 0.6);
+            margin          : 0 10px;
+        }
+    }
+}
+
+// picker nav
+
+.picker__nav--next:hover,
+.picker__nav--prev:hover {
+    background-color: transparent;
+    color           : #fff;
+}
+
+.picker__nav--prev:before {
+    border-right-color: #fff;
+}
+
+.picker__nav--next:before {
+    border-left-color: #fff;
+}
+
+.picker--focused .picker__day--highlighted,
+.picker__day--highlighted:hover,
+.picker__day--infocus:hover,
+.picker__day--outfocus:hover {
+    background-color: #fff;
+    color           : #232323;
+}
+
+.picker--focused .picker__day--disabled,
+.picker__day--disabled,
+.picker__day--disabled:hover {
+    background-color: transparent;
+    border-color    : transparent;
+    opacity         : 0.5;
+    color           : #fff;
+}
+
+// picker list
+.picker__list {
+    padding-bottom: 0;
+
+    .picker__list-item {
+        background-color   : transparent;
+        border-color       : transparent;
+        color              : #fff;
+        border-bottom-color: rgba(0, 0, 0, 0.08);
+        font-size          : 15px;
+
+        &.picker__list-item--selected,
+        &.picker__list-item--highlighted {
+            background-color: rgba(0, 0, 0, 0.08);
+        }
+    }
+}
+
+
+// wpc-no-link
+.wpc-no-link {
+    pointer-events: none;
+    cursor        : default;
+}
+
+/*=========================
+// product popup content
+======================-*/
+.variation_popup_content {
+    padding         : 50px;
+    background-color: #fff;
+}
+// external product link
+
+// red color text
+.wpc_danger_text{
+    color: #f00;
+    font-size: 13px;
+} 
+
+//  wpc no desc
+.wpc-no-desc{
+    .wpc-food-menu-item .wpc-add-to-cart{
+        position: relative;
+        a.button{
+            margin-left: auto;
+        }
+    }
+} 
+
+.wpc_success_message {
+    text-align: center;
+    background: #d7ffe3;
+    padding: 10px;
+}
+
+} // divi parent class end
+
+//  wpc  cart 
+.wpc_cart_block {
+    position: fixed;
+    right   : -420px;
+    top     : 50%;
+    z-index : 99999;
+    width   : 460px;
+    @include transition();
+    @include transform(translateY(-50%));
+    padding-left: 40px;
+    margin: 0;
+    @media (max-width: 767px) {
+        width: 320px;
+        right: -278px;
+        @include transform(translateY(-20%));
+        top: 30%;
+    }
+
+
+    &.cart_icon_active {
+        right: 0;
+    }
+
+    .wpc_cart_icon {
+        position                 : absolute;
+        left: -30px;
+        top                      : 0;
+        background               : #5D78FF;
+        padding                  : 20px 20px;
+        color                    : #fff;
+        border-top-left-radius   : 9px;
+        border-bottom-left-radius: 10px;
+        min-width: 70px;
+        text-align: center;
+        max-height: 65px;
+    }
+
+    div#wpc-mini-cart-count {
+        .basket-item-count{
+            vertical-align: top;
+        }
+    }
+    .wpc_background_color {
+        background-color: #fff;
+        box-shadow      : 0 10px 15px rgba(0, 0, 0, .05);
+        padding         : 15px;
+        list-style-type : none;
+        max-height      : 500px;
+        overflow-y      : scroll;
+
+        @media (max-width: 767px) {
+            max-height: 350px;
+        }
+
+        a.button.wc-forward {
+            background  : $primary-color;
+            padding     : 10px 10px;
+            margin-right: 10px;
+            color       : #fff;
+            width       : 100%;
+            text-align  : center;
+            @include border-radius(3px);
+            font-size     : 14px;
+            text-transform: uppercase;
+            font-weight   : 600;
+            line-height   : 24px;
+
+            &.checkout {
+                opacity: 0.5;
+            }
+        }
+
+
+        dl.variation {
+            padding-left: 0 !important;
+            display     : block;
+            border-left : none;
+
+            dt,
+            dd {
+                display: inline-block;
+                width  : 40%;
+                padding: 0 !important;
+                margin : 0 !important;
+
+                p {
+                    margin-bottom: 0;
+                }
+            }
+        }
+
+        .wpc_pro_main_price {
+            background   : #f9f9f9;
+            // padding      : 10px 0 0 110px;
+            // margin-bottom: -20px;
+        }
+    }
+
+    .woocommerce-mini-cart__buttons {
+        display        : flex;
+        justify-content: space-between;
+    }
+
+    .woocommerce-mini-cart {
+        padding        : 0;
+        position       : relative;
+        list-style-type: none;
+        margin: 0;
+
+        li {
+
+            display         : block;
+            padding-left    : 110px !important;
+            min-height      : 110px;
+            padding-top: 15px !important;
+            padding-right   : 20px !important;
+            margin: 10px 0 20px !important;;
+            padding         : 15px;
+            background-color: #F9F9F9;
+            @include border-radius(4px);
+
+            a {
+                font-size  : 18px;
+                color      : $primary-color;
+                font-weight: 500;
+            }
+
+            img {
+                width     : 80px !important;
+                position  : absolute;
+                height    : 80px;
+                object-fit: cover;
+                left      : 15px;
+            }
+
+            .remove.remove_from_cart_button {
+                position   : absolute;
+                right      : 15px;
+                background : #f00;
+                width      : 20px;
+                height     : 20px;
+                line-height: 20px;
+                text-align : center;
+                color      : #fff;
+                @include border-radius(50%);
+                font-size: 14px;
+            }
+
+            .quantity {
+                display  : block;
+                font-size: 14px;
+            }
+
+        }
+    }
+
+    .woocommerce-mini-cart__total {
+        background-color: #f9f9f9;
+        padding         : 10px 15px;
+        margin-bottom   : 20px;
+    }
+
+    .minicart-condition-parent {
+        margin-bottom: 30px;
+
+        label {
+            margin-right  : 15px;
+            vertical-align: inherit;
+            font-size     : 18px;
+            font-weight   : 500;
+            cursor        : pointer;
+            display: inline-block;
+        }
+    }
+
+    .woocommerce-mini-cart__empty-message {
+        margin: 0;
+        line-height: 34px;
+        padding: 0;
+    }
+}
+
+
+/* minicart */
+.wpc-menu-mini-cart{
+
+    .product_list_widget{
+
+        li{
+        
+            a:not(.remove){
+                grid-column: span 12;
+            }
+            .variation{
+                grid-column: span 12;
+            }
+            .quantity{
+                grid-column: span 12;
+                .qty{
+                    border: 1px solid #dcdcdc;
+                    padding: 5px 10px;
+                    margin: 5px 0;
+                    max-width: 100px;
+                }
+            }
+            .amount{
+                margin-left: 6px;
+            }
+
+            &.loading{
+                position: relative;
+
+                &:before{
+                    content: url("../fonts/spinner.svg")  !important;
+                    position: absolute;
+                    left: 48px;
+                    top: 48px;
+                    /* Safari */
+                    animation: spin 2s linear infinite !important;
+                    z-index: 1;
+                }
+
+                .attachment-woocommerce_thumbnail{
+                    z-index: 0;
+                    width: 80px;
+                    height: 80px;
+                    filter: brightness(0.5);
+                }
+            }
+        }
+    }
+}
+
+
+body.woocommerce-cart,
+body.woocommerce-checkout {
+    .wpc_cart_block {
+        display: none;
+    }
+}
+
+/*----------------------------
+// locattion popup
+-----------------------------*/
+body.wpc_location_popup,
+body.wpc_food_customize_popu {
+    position: relative;
+
+    &:before {
+        background-color: rgba(0, 0, 0, 0.6);
+        position        : absolute;
+        left            : 0;
+        top             : 0;
+        width           : 100%;
+        content         : '';
+        height          : 100%;
+        z-index         : 999;
+    }
+}
+
+#wpc_location_modal,
+.food_customize_modal {
+
+    padding   : 40px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.06);
+    position  : fixed;
+    left      : 0;
+    right     : 0;
+    top       : 50%;
+    margin    : auto;
+    max-width : 600px;
+    background: #fff;
+    z-index   : 999;
+    transform : translateY(-50%);
+
+    .wpc-location {
+        border-color : #eaeaea;
+        height       : 60px;
+        margin-bottom: 15px;
+        width: 100%;
+    }
+
+    .wpc-close {
+        margin-left     : 15px;
+        background-color: $secondary-color;
+        position        : absolute;
+        right           : -27px;
+        top             : -28px;
+        border-radius   : 50%;
+        line-height     : 20px;
+        width           : 40px;
+        height          : 40px;
+        padding         : 0;
+    }
+}
+
+.food_customize_modal {
+    width    : 100%;
+    max-width: 100%;
+
+}

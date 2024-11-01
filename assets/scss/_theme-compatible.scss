@@ -1,0 +1,261 @@
+
+/*============================================================================
+// Theme compatible css
+======================-=====================================================*/
+
+
+/* astra theme support css */
+
+  .theme-astra .wpc_cart_block .woocommerce-mini-cart li .remove.remove_from_cart_button{
+    line-height: 16px;
+  }
+  .theme-astra p#wpc_pro_delivery_time_field,
+  .theme-astra div#wpc_location_field {
+    margin-bottom: 20px;
+  }
+  .theme-astra.woocomerce-layout-override-enable.woocommerce-checkout .woocommerce .col2-set{
+    margin-right: 20px !important;
+    width: 50% !important;
+  }
+  .theme-astra.woocomerce-layout-override-enable.woocommerce-checkout .woocommerce #payment{
+    padding: 15px;
+  }
+  .theme-astra .wpc-nav-shortcode .wpc-tab-grid-style2 .wpc-food-menu-item .wpc-price{
+    line-height: 90px;
+    padding: 0;
+  }
+  
+  
+  /* oceanWP theme support css */
+  .theme-oceanwp .wpc_cart_block{
+    padding-left: 40px;
+  }
+  .theme-oceanwp .wpc-minicart-wrapper .product_list_widget {
+    max-height: calc(100vh - 30rem);
+}
+  
+  .theme-oceanwp.single .wpc_cart_block .thumbnail{
+    position: static;
+    margin-bottom: 0;
+  }
+  
+  .theme-oceanwp .wpc-tab-grid-style2 .wpc-food-menu-item .wpc-price .amount,
+  .theme-oceanwp .wpc-food-tab-style4  .amount,
+  .theme-oceanwp .wpc-slider-grid-3.wpc-food-menu-item span.wpc-menu-currency .amount{
+    color: #fff;
+  }
+  
+  .theme-oceanwp .wpc-tab-grid-style2  .wpc-food-menu-item .wpc-food-inner-content p{
+    padding-right: 0;
+  }
+  .theme-oceanwp .wpc-tab-grid-style2 .wpc-food-menu-item .wpc-food-menu-thumb {
+    width: 200px;
+    height: 200px;
+  }
+  
+  .theme-oceanwp .wpc-slider-grid-3 .wpc-menu-tag-wrap, .wpc-menu-list-style2 .wpc-menu-tag-wrap{
+    z-index: 1;
+  }
+
+
+  
+/* storefornt theme support css */
+
+.theme-storefront #wpc_location_modal .wpc-location, .food_customize_modal .wpc-location{
+    width: 100%;
+  }
+  .theme-storefront select#wpc_location_name {
+    padding: 10px;
+    background-color: #f2f2f2;
+    border: none;
+  }
+  .theme-storefront .wpc_cart_block .woocommerce-mini-cart li .remove.remove_from_cart_button:before{
+    color: #fff;
+  }
+  .theme-storefront {
+    .woocommerce-product-gallery {
+      .flex-control-thumbs {
+        li {
+          width: 25% !important;
+          margin-right: 0 !important;
+        }
+      }
+    }
+  }
+ 
+
+  /* rosa lite */
+
+.theme-rosa-lite .wpc-food-menu-item .wpc-food-inner-content p {
+  padding-right: 50px;
+  min-height: 10px;
+}
+
+
+.theme-rosa2-lite .wpc_cart_block .minicart-condition-parent input[type="radio"]{
+  float: none;
+  width: 1rem !important;
+  height: 1rem !important;
+  margin: 0px 5px 0;
+}
+.theme-rosa2-lite .wpc_cart_block .minicart-condition-parent label{
+  vertical-align: top;
+}
+  
+
+/* Blocksy theme support css */
+.theme-blocksy {
+  .wpc-food-menu-item .wpc-add-to-cart a {
+      padding-left: 17px;
+      padding-right: 17px;
+  }
+  .wpc-product-popup-content .onsale {
+      left: auto;
+  }
+  .woocommerce-mini-cart-item {
+      img {
+          top: 8px;
+      }
+      .ct-image-container {
+          position: static;
+          display: block;
+          mask-image: unset !important;
+          .ct-ratio {
+              padding: 0 !important;
+          }        
+      }
+      .quantity .qty {
+          height: 30px;
+          background-color: #fff;
+      }
+  }
+}
+
+/* generatepress theme support css */
+
+.theme-generatepress {
+  .wpc_cart_block .woocommerce-mini-cart li .remove.remove_from_cart_button {
+      text-decoration: none !important;
+      line-height: 16px;
+  }
+  .wpc-product-popup-content {
+      select {
+          width: 100%;
+          background-color: transparent;
+      }
+      table {
+          border-color: transparent;
+          &.variations tr {
+              display: flex;
+              flex-direction: column;
+              .label label {
+                  display: block;
+                  margin: 10px 0;
+              }
+              td, th {
+                  background-color: transparent;
+                  padding: 0;
+                  border-color: transparent;
+              }
+          }
+      }
+  }
+}
+
+/* kadence theme support css */
+.theme-kadence {
+  .woocommerce-mini-cart {
+      .quantity,.quantity:hover {
+          background-color: transparent;
+          border-color: transparent;
+          .minus,.plus {
+              padding: 0;
+              padding-right: 5px;
+          }
+      }
+      .remove.remove_from_cart_button {
+          text-decoration: none;
+      }
+  }
+}
+/* neve theme support css */
+.theme-neve {
+    .wpc-menu-mini-cart {
+        .wc-forward {
+            &:not(.checkout){
+                &:hover {
+                    border-color: transparent !important;
+                }
+            }
+        }
+    }
+}
+
+.woocomerce-layout-override-enable{
+  .variation_product_image {
+      .woocommerce-product-gallery__image:not(:first-child){
+          display: inline-block;
+          width: 70px;
+          margin: 6px 6px 0 0;
+      }
+  }
+  .product-variations-wrapper {
+    a.reset_variations{
+      margin-left: 5px;
+      margin-top: 20px;
+    }
+  }
+}
+
+  .theme-oceanwp .wpc_variation_popup_content .wpc-single-content button.single_add_to_cart_button,
+  .ast-single-post .wpc_variation_popup_content .wpc-single-content button.single_add_to_cart_button,
+  .theme-rosa-lite .action-button.wpc-btn{
+  font-size: 16px;
+  line-height: 32px;
+  color: #fff;
+  background-color: #e3106e;
+  display: inline-block;
+  padding: 5px 20px;
+  font-weight: 500;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+}
+.ast-single-post.woocommerce-page.woocommerce-checkout form #order_review td,
+.ast-single-post.woocommerce-page.woocommerce-checkout form #order_review th{
+  border-color: transparent !important;
+  background: transparent;
+}
+body.ast-single-post.woocomerce-layout-override-enable.woocommerce-checkout .food-with-reserv-wrap{
+  margin-bottom: 0;
+}
+
+/*
+  Bricks Theme/Builder Support
+*/
+
+.theme-bricks {
+  .woocommerce-input-wrapper {
+    #wpc_pro_order_time_Pickup,
+    #wpc_pro_order_time_Delivery {
+      width: auto;
+      margin-top: -6px;
+    }
+  }
+  .mini-cart-quantity-wrapper {
+    .quantity {
+      position: relative;
+      display: flex;
+      align-items: center;
+      .action{ 
+        position: absolute;
+        left: 5px;
+        top: 19px;
+        &.plus {
+          left: auto;
+          right: 45px;
+        }
+      }
+    }
+  }
+}

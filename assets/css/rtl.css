@@ -1,0 +1,166 @@
+/* RTL CSS */
+.wpc-reservation-form #wpc_cancel_request,
+.wpc-reservation-form #wpc_book_table{
+    padding-right: 10px;
+    padding-left: 0;
+}
+.wpc-food-menu-item .wpc-food-inner-content .wpc-menu-currency{
+    float: left;
+}
+.wpc-food-menu-item .wpc-add-to-cart{
+    right: auto;
+    left: 15px;
+}
+.wpc-food-menu-item .wpc-food-inner-content .wpc-post-title a{
+    padding-right: 0;
+    padding-left: 10px;
+}
+.wpc-food-menu-item .wpc-menu-tag li{
+    margin-right: 0;
+    margin-left: 5px;
+}
+.wpc-food-menu-item .wpc-food-inner-content p{
+    padding-right: 0;
+    padding-left: 50px;
+}
+/* Cart RTL */
+.wpc_cart_block{
+    left: -420px;
+    right: auto;
+    top: 50%;
+    padding-left: 0;
+    padding-right: 40px;
+}
+.wpc_cart_block .wpc_cart_icon{
+    right: -15px;
+    left: auto;
+    border-top-right-radius: 9px;
+    border-bottom-right-radius: 10px;
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+}
+.rtl .wpc_cart_block .woocommerce-mini-cart li{
+    text-align: right;
+}
+.rtl .wpc_cart_block .woocommerce-mini-cart li{
+    padding-right: 110px !important;
+    padding-left: 20px !important;
+}
+.wpc_cart_block .minicart-condition-parent label{
+    margin-left: 15px;
+    margin-right: 0;
+}
+.wpc_cart_block.cart_icon_active{
+    right: auto;
+    left: 0;
+}
+.wpc_cart_block .woocommerce-mini-cart li img{
+    right: 15px;
+    left: auto;
+}
+.wpc_cart_block .woocommerce-mini-cart li .remove.remove_from_cart_button{
+    right: auto;
+    left: 15px;
+}
+.wpc_cart_block .woocommerce-mini-cart li{
+    padding-left: 0 !important;
+    padding-right: 110px;
+}
+.wpc_cart_block .wpc_background_color .wpc_pro_main_price{
+    padding: 10px 110px 0 0px;
+}
+.wpc_cart_block .woocommerce-mini-cart li{
+    padding: 10px;
+    text-align: left;
+}
+
+/* Pro RTL */
+.rtl .wpc_pro_food_time li .wpc_preparing_time{
+    float: left;
+}
+.rtl .wpc-tab-grid-style2 .wpc-food-menu-item .wpc-menu-tag-wrap{
+    left: auto;
+    right: 0;
+}
+.rtl .wpc-food-tab-style4.wpc-food-menu-item span.wpc-menu-currency,
+.rtl .wpc-slider-grid-3.wpc-food-menu-item span.wpc-menu-currency{
+    left: 15px;
+    right: auto;
+}
+.wpc-tab-grid .wpc-menu-tag-wrap{
+    left: auto;
+    right: 15px;
+}
+.wpc-food-menu-slider .wpc-post-meta-info .wpc-menu-tag{
+    float: right;
+}
+.wpc-food-menu-item .wpc-food-inner-content .wpc-menu-currency{
+    float: left;
+    padding-left: 0;
+    padding-right: 15px;
+}
+.wpc-post-meta-info .wpc-menu-tag-wrap {
+    float: right;
+}
+.wpc-slider-grid-3 .wpc-menu-tag-wrap,
+.wpc-menu-list-style2 .wpc-menu-tag-wrap{
+    right: 15px;
+    left: auto;
+}
+.wpc-tab-grid-style2 .wpc-food-menu-item .wpc-price{
+    left: auto;
+    right: 60%;
+}
+.wpc-single-content.summary.entry-summary {
+    text-align: right;
+}
+.rtl .product-variations-wrapper .wpc-variation-body [type=radio]:checked,
+.rtl .product-variations-wrapper .wpc-variation-body [type=radio]:not(:checked){
+    left: auto;
+    right: -9999px;
+}
+.variation_popup_content .woocommerce-variation-add-to-cart .quantity{
+    margin-right: 0;
+    margin-left: 20px;
+}
+.rtl .product-popup-content button.mfp-close{
+    right: auto;
+    left: -11px;
+}
+/* swipper arrow rtl */
+.swiper-button-prev,
+.swiper-container-rtl .swiper-button-next {
+    background-image: none;
+}
+.swiper-button-next,
+.swiper-container-rtl .swiper-button-prev {
+    background-image: none !important;
+}
+
+.rtl .wpc-food-menu-slide .swiper-button-next,
+.rtl .wpc-food-menu-slider .swiper-button-next,
+.rtl .wpc-tab-with-slider .swiper-button-next {
+    right: 10px;
+    left: auto
+}
+
+.rtl .wpc-food-menu-slide .swiper-button-prev ,
+.rtl .wpc-food-menu-slider .swiper-button-prev ,
+.rtl .wpc-tab-with-slider .swiper-button-prev {
+    left: 10px;
+    right: auto;
+}
+@media (min-width: 1024px){
+    .rtl .wpc-food-menu-slide:hover .swiper-button-next,
+    .rtl .wpc-food-menu-slider:hover .swiper-button-next,
+    .rtl .wpc-tab-with-slider:hover .swiper-button-next {
+        right: -45px;
+        left: auto
+    }
+    .rtl .wpc-food-menu-slide:hover .swiper-button-prev ,
+    .rtl .wpc-food-menu-slider:hover .swiper-button-prev ,
+    .rtl .wpc-tab-with-slider:hover .swiper-button-prev {
+        left: -45px;
+        right: auto;
+    }
+}
